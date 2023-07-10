@@ -83,7 +83,7 @@ function createRelated() {
   let itemfigure = document.createElement("a");
   itemfigure.href = link;
   let img = document.createElement("img");
-  img.src = imgSrc;
+  img.src = `./.${imgSrc}`;
 
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);

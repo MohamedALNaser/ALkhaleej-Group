@@ -22,7 +22,7 @@ footerItemLink.forEach((e, index) => {
   link = services[i].href;
   servName = services[i].name;
   if (servData !== "" && servName !== "") {
-    footerItemLink[index].href = link;
+    footerItemLink[index].href = `./.${link}`;
     footerLIsName[index].innerHTML = servName;
     footerLIsDate[index].innerHTML = servData;
   }

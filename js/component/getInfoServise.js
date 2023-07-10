@@ -94,7 +94,7 @@ document.querySelector(
 ).innerHTML = categury;
 document.querySelector(
   ".wp-content .home .breadcrumb .breadcrumb-item:nth-child(2) a"
-).href = `./../../categury/${categury}.html`;
+).href = `./../categury/${categury}`;
 document.querySelector(
   ".wp-content .home .breadcrumb .breadcrumb-item:nth-child(3)"
 ).innerHTML = servName;
@@ -102,7 +102,7 @@ document.querySelector(".wp-content .home .entery-header > span a").innerHTML =
   categury;
 document.querySelector(
   ".wp-content .home .entery-header > span a"
-).href = `./../../categury/${categury}.html`;
+).href = `./../categury/${categury}`;
 document.querySelector(".wp-content .home .entery-header h1").innerHTML =
   servName;
 document.querySelector(
