@@ -25,7 +25,7 @@ function createRelated() {
   serviseItemContent.classList.add("related-articl-item-content");
 
   let servisePage = document.createElement("a");
-  servisePage.href = link;
+  servisePage.href = `./.${link}`;
   let serviseName = document.createElement("h3");
   servisePage.textContent = servName;
 
@@ -63,7 +63,7 @@ function createRelated() {
 
   let btn = document.createElement("a");
   btn.classList.add("btn");
-  btn.href = link;
+  btn.href = `./.${link}`;
   btn.textContent = "اقرا المزيد";
 
   serviseDate.appendChild(spanDate);
@@ -81,7 +81,7 @@ function createRelated() {
   serviseItemContent.appendChild(btn);
 
   let itemfigure = document.createElement("a");
-  itemfigure.href = link;
+  itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
   img.src = `./.${imgSrc}`;
 
