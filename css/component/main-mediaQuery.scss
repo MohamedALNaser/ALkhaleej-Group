@@ -1,0 +1,251 @@
+// breakpoins: 320px, 480px, 768px, 1024px, 1200px, 1600px
+// mediaQuery: mobile, tablet, desktop, largeDesktop
+// Medium devices (tablets, less than 992px)
+@media screen and (max-width:991.98px) {
+    .header {
+        min-height: 70px;
+        .main-menu {
+            padding: 15px;
+            form {
+                width: 40px;
+                height: 40px;
+                input {
+                    display: none;
+                }
+            }
+        }
+    }
+    .home {
+        height: calc(92vh - 80px) !important;
+        .entery-header {
+            top: 30% !important;
+            .info {
+                >span {
+                    margin: 0 5px;
+                }
+            }
+        }
+        a.go-to-content {
+            top: 0 !important;
+        }
+    }
+    .content {
+        .content-container {
+            margin: 0px auto !important;
+            max-width: 100% !important;
+        }
+    }
+    .footer {
+        margin-top: 0px;
+        .wp-footer-content {
+            .col {
+                width: 100%;
+                div.content {
+                    h3 {
+                        font-size: 27px;
+                    }
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media screen and (max-width: 767.98px) {
+    .home {
+        height: calc(92vh - 80px) !important;
+        .entery-header {
+            top: 25% !important;
+            h1 {
+                font-size: 36px !important;
+            }
+        }
+    }
+    .content {
+        .content-container {
+            margin: 0px auto !important;
+            max-width: 100% !important;
+            article.main-content {
+                .entery-content {
+                    .share-buttons {
+                        .share-links {
+                            justify-content: flex-start;
+                            a {
+                                span.links {
+                                    padding-right: 10px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .related-articl {
+        .related-articl-container {
+            .related-articl-item {
+                h3 {
+                    line-height: 1.4 !important;
+                    font-size: 16px;
+                    padding-top: 0px !important;
+                }
+            }
+        }
+    }
+    .footer {
+        .wp-footer-content {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .footer {
+        padding: 20px;
+    }
+    .footer .wp-footer-content .col {
+        margin-bottom: 40px;
+    }
+    .float {
+        width: 50px;
+        height: 50px;
+        .my-float {
+            margin-top: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .footer {
+        padding: 30px;
+        .wp-footer-content {
+            .col {
+                &:nth-child(1) {
+                    max-width: 100%;
+                }
+                >h3 {
+                    font-size: 33px;
+                }
+                div.content {
+                    h4 {
+                        font-size: 22px;
+                    }
+                    h3 {
+                        font-size: 33px;
+                    }
+                    p {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media screen and (min-width: 320px) and (max-width: 575.98px) {
+    .header {
+        .container {}
+        .main-menu {
+            a {
+                font-size: 16px;
+                &:hover {}
+            }
+        }
+    }
+    .breadcrumb {
+        font-size: 0.8rem !important;
+        line-height: 1.4;
+    }
+    .home {
+        .entery-header {
+            top: 20% !important;
+            h1 {
+                font-size: 26px !important;
+            }
+            .info {
+                >span {
+                    font-size: 12px !important;
+                }
+            }
+        }
+        a.go-to-content {
+            right: 45% !important;
+        }
+    }
+    .content {
+        .content-container {
+            article.main-content {
+                .entery-content {
+                    h2 {
+                        font-size: 22px !important;
+                    }
+                    h3 {
+                        font-size: 18px !important;
+                    }
+                    p {
+                        font-size: 13px !important;
+                    }
+                    ul {
+                        font-size: 13px !important;
+                    }
+                    .share-buttons {
+                        .share-links {
+                            a {
+                                max-width: 40px;
+                                min-width: 40px;
+                                width: 40px !important;
+                                span.icon {
+                                    &::before {
+                                        content: none !important;
+                                    }
+                                }
+                                span.links {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .related-articl {
+        .related-articl-container {
+            flex-direction: column;
+            .related-articl-item {
+                max-width: 265px;
+                width: 100% !important;
+                align-items: center;
+            }
+        }
+    }
+    .wp-content .related-articl .related-articl-container .related-articl-item {
+        flex-direction: column !important;
+        >a {
+            width: 100%;
+        }
+        .related-articl-item-content {
+            width: 100%;
+            max-width: 340px;
+        }
+    }
+    .wp-content .related-articl .related-articl-container {
+        align-items: center;
+    }
+    .wp-content .related-articl .related-articl-container .related-articl-item h3 {
+        font-size: 21px !important;
+    }
+    .related-articl-item-content p:nth-child(3) {
+        font-size: 18px !important;
+    }
+    a.btn {
+        margin: 0 auto;
+    }
+    .wp-content .related-articl h2 {
+        font-size: 36px;
+    }
+}

@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px) {
+    .wp-content .section .wp-section-content .services .services-content .servise-item {
+        width: 100%;
+        .servise-date,
+        .item {
+            justify-content: flex-start;
+        }
+    }
+}
