@@ -114,7 +114,19 @@ function relatedServises(categuryName) {
   }
 }
 let categuryName = getMeta("Pagecategory");
+document.querySelector(
+  ".related-articl-container"
+).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
+document.querySelector(".related-articl-container").style.cssText = `
+  flex-direction: row;
+  font-size: 18px;
+  direction: ltr;
+  width: 160px;
+  margin: 0 auto;
+  border: 2px solid #eee;
+  padding: 14px;
+`;
 
 document.title = `${categuryName} الأرشيف - جداول الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
-relatedServises(categuryName);
+// relatedServises(categuryName);
