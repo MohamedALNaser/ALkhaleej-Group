@@ -34,7 +34,7 @@ footerItemLink.forEach((e, index) => {
   servName = services[i].name;
   if (servData !== "" && servName !== "") {
     if (exist !== "") {
-      footerItemLink[index].href = `./${link}`;
+      footerItemLink[index].href = `./.${link}`;
     } else footerItemLink[index].href = `${link}`;
     footerLIsName[index].innerHTML = servName;
     footerLIsDate[index].innerHTML = servData;

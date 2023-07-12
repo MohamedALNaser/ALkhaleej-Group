@@ -1,0 +1,18 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+a.tag {
+  background: #eee;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #d7d4d4;
+  border-radius: 4px;
+  font-weight: 600;
+}
+a.tag:hover {
+  color: #32beeb;
+}/*# sourceMappingURL=tag.css.map */
