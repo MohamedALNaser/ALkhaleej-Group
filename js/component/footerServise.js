@@ -15,14 +15,27 @@ let footerLIsDate = document.querySelectorAll(
 let footerLIsName = document.querySelectorAll(
   ".footer .wp-footer-content .col ul.content li.sevice h4.sevice-name"
 );
+function getMeta(metaName) {
+  const metas = document.getElementsByTagName("meta");
 
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute("name") === metaName) {
+      return metas[i];
+    }
+  }
+
+  return "";
+}
+let exist = getMeta("pageId");
 footerItemLink.forEach((e, index) => {
   i = services.length - index - 1;
   servData = services[i].data;
   link = services[i].href;
   servName = services[i].name;
   if (servData !== "" && servName !== "") {
-    footerItemLink[index].href = `${link}`;
+    if (exist !== "") {
+      footerItemLink[index].href = `./${link}`;
+    } else footerItemLink[index].href = `${link}`;
     footerLIsName[index].innerHTML = servName;
     footerLIsDate[index].innerHTML = servData;
   }
