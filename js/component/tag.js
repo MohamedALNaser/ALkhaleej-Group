@@ -117,7 +117,7 @@ document.querySelector(".related-articl > h2").innerHTML = categuryName;
 document.querySelector("li.breadcrumb-item.category").innerHTML = categuryName;
 // relatedServises(PageTagName);
 
-// let relatedItems = [];
+let relatedItems = [];
 for (let i = 0; i < services.length; i++) {
   servName = services[i].name.split(" ");
   let serchItems = PageTagName.split(" ");
@@ -133,21 +133,22 @@ for (let i = 0; i < services.length; i++) {
     desc = services[i].description;
     if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
       createRelated(servData, views, link, servName, imgSrc, desc);
-    } else {
-      document.querySelector(
-        ".related-articl-container"
-      ).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
-      document.querySelector(".related-articl-container").style.cssText = `
-        flex-direction: row;
-        font-size: 18px;
-        direction: ltr;
-        width: 160px;
-        margin: 0 auto;
-        border: 2px solid #eee;
-        padding: 14px;
-      `;
     }
-    // relatedItems.push(i);
+    relatedItems.push(i);
   }
 }
 // console.log(relatedItems);
+if (relatedItems.length) {
+  document.querySelector(
+    ".related-articl-container"
+  ).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
+  document.querySelector(".related-articl-container").style.cssText = `
+    flex-direction: row;
+    font-size: 18px;
+    direction: ltr;
+    width: 160px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    padding: 14px;
+  `;
+}
