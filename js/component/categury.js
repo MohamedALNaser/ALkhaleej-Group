@@ -93,10 +93,10 @@ function createRelated() {
 }
 function relatedServises(categuryName) {
   for (let i = 0; i < services.length; i++) {
-    console.log(
-      categuryName.trim().toLowerCase() ===
-        services[i].categury.trim().toLowerCase()
-    );
+    // console.log(
+    //   categuryName.trim().toLowerCase() ===
+    //     services[i].categury.trim().toLowerCase()
+    // );
     if (
       categuryName.trim().toLowerCase() ===
       services[i].categury.trim().toLowerCase()
@@ -117,4 +117,5 @@ let categuryName = getMeta("Pagecategory");
 
 document.title = `${categuryName} الأرشيف - جداول الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
+// dont use categuryName , all servise its categury is the same categiry
 relatedServises(categuryName);
