@@ -114,6 +114,7 @@ function relatedServises(categuryName) {
   }
 }
 let categuryName = getMeta("Pagecategory");
+let PageTagName = getMeta("PageTag");
 document.querySelector(
   ".related-articl-container"
 ).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
@@ -129,4 +130,5 @@ document.querySelector(".related-articl-container").style.cssText = `
 
 document.title = `${categuryName} الأرشيف - جداول الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
-// relatedServises(categuryName);
+document.querySelector("li.breadcrumb-item.category").innerHTML = categuryName;
+// relatedServises(PageTagName);
