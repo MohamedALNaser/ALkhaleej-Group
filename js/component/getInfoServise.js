@@ -51,7 +51,7 @@ function createRelated() {
 
   let itemfigure = document.createElement("figure");
   let img = document.createElement("img");
-  img.src = `${imgSrc}`;
+  img.src = `./../${imgSrc}`;
 
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
@@ -60,10 +60,14 @@ function createRelated() {
   servicesContent.appendChild(serviseItem);
 }
 function relatedServises(padgeId) {
+  let flage = true;
   for (let i = 0; i < services.length - 1; i++) {
+    /// dont use categuryName , all servise its categury is the same categiry
+
     if (
-      services[padgeId].categury.trim() === services[i].categury.trim() &&
-      i !== padgeId
+      !true
+      // services[padgeId].categury.trim() === services[i].categury.trim() &&
+      // i !== padgeId
     ) {
       // idNum = services[padgeId].id;
       servData = services[i].data;
@@ -73,7 +77,22 @@ function relatedServises(padgeId) {
       if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
         createRelated(servData, link, servName, imgSrc);
       }
+      flage = false;
     }
+  }
+  if (flage) {
+    document.querySelector(
+      ".related-articl-container"
+    ).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
+    document.querySelector(".related-articl-container").style.cssText = `
+      flex-direction: row;
+      font-size: 18px;
+      direction: ltr;
+      width: 160px;
+      margin: 0 auto;
+      border: 2px solid #eee;
+      padding: 14px;
+    `;
   }
 }
 let padgeId = Number(getMeta("pageId"));
