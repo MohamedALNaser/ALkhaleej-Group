@@ -131,14 +131,14 @@ for (let i = 0; i < services.length; i++) {
     servName = services[i].name;
     imgSrc = services[i].img;
     desc = services[i].description;
-    if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
-      createRelated(servData, views, link, servName, imgSrc, desc);
-    }
+    // if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
+    createRelated(servData, views, link, servName, imgSrc, desc);
+    // }
     relatedItems.push(i);
   }
 }
 // console.log(relatedItems);
-if (relatedItems.length) {
+if (relatedItems.length === 0) {
   document.querySelector(
     ".related-articl-container"
   ).innerHTML = `In Process <i class="fa-solid fa-gear fa-fw fa-spin"></i>`;
