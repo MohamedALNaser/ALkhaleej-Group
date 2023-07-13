@@ -51,7 +51,7 @@ function createRelated() {
 
   let itemfigure = document.createElement("figure");
   let img = document.createElement("img");
-  img.src = `./../${imgSrc}`;
+  img.src = `./.${imgSrc}`;
 
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
