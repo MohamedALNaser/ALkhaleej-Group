@@ -117,7 +117,7 @@ document.querySelector(".related-articl > h2").innerHTML = categuryName;
 document.querySelector("li.breadcrumb-item.category").innerHTML = categuryName;
 // relatedServises(PageTagName);
 
-let relatedItems = [];
+// let relatedItems = [];
 for (let i = 0; i < services.length; i++) {
   servName = services[i].name.split(" ");
   let serchItems = PageTagName.split(" ");
@@ -147,7 +147,7 @@ for (let i = 0; i < services.length; i++) {
         padding: 14px;
       `;
     }
-    relatedItems.push(i);
+    // relatedItems.push(i);
   }
 }
 // console.log(relatedItems);
