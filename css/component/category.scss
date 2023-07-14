@@ -66,7 +66,7 @@
 }
 
 .wp-content .related-articl .related-articl-container .related-articl-item h3 {
-    font-size: 23px;
+    font-size: 20px;
     line-height: 1.4;
     a {
         color: #2c2f34;
@@ -82,28 +82,38 @@
 }
 
 .wp-content .related-articl .related-articl-container .related-articl-item p span.servise-date {
-    margin: 5px 0;
+    margin: 0 0 0 3px;
+    color: #767676;
     display: flex;
     justify-content: space-between;
 }
 
 .related-articl-item-content p:nth-child(3) {
-    color: #8b8383;
+    color: #666666;
     font-size: 18px;
-    margin: 10px 0 15px;
+    margin-top: 5px;
 }
 
 a.btn {
-    background-color: #32beeb;
+    // background-color: #32beeb;
+    display: inline-block;
+    background-color: #08f;
     color: #fff;
-    padding: 10px 12px;
-    border-radius: 4px;
-    display: block;
-    width: fit-content;
+    padding: 7px 15px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 21px;
+    text-align: center;
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
 a.btn:hover {
-    background-color: #08f;
+    background-color: #118cb3;
 }
 
 .wp-content .related-articl {}
