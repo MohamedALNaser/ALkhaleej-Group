@@ -339,7 +339,8 @@ h6 {
 .wp-content .content .content-container article.main-content .entery-content p a:hover {
   color: #08f;
 }
-.wp-content .content .content-container article.main-content .entery-content ul {
+.wp-content .content .content-container article.main-content .entery-content ul,
+.wp-content .content .content-container article.main-content .entery-content ol {
   list-style-type: disc;
   margin-bottom: 20px;
   padding-right: 15px;
@@ -347,7 +348,8 @@ h6 {
   margin-right: 20px;
   margin-left: 0;
 }
-.wp-content .content .content-container article.main-content .entery-content ul li {
+.wp-content .content .content-container article.main-content .entery-content ul li,
+.wp-content .content .content-container article.main-content .entery-content ol li {
   list-style: disc;
   list-style-image: none;
   margin: 0 0 5px 0;
