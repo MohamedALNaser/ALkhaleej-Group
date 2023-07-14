@@ -153,6 +153,13 @@ document.querySelector(
 document.querySelector(
   ".wp-content .content .content-container article.main-content .servise-img span.servise-name span"
 ).innerHTML = servName.trim().slice(5);
+
+document.querySelector(
+  ".wp-content .content .content-container article.main-content .entery-content p strong"
+).innerHTML = `${servName.trim()}، `;
+document.querySelector(
+  ".wp-content .content .content-container article.main-content .entery-content p strong"
+).innerHTML = `${servName.trim()}، `;
 document.querySelectorAll(
   ".wp-content .content .content-container article.main-content .entery-content figure.attchement-img figcaption"
 )[0].innerHTML = servName.trim().slice(5);
@@ -161,3 +168,13 @@ document.querySelectorAll(
 )[1].innerHTML = servName.trim().slice(5);
 
 relatedServises(padgeId);
+
+const searchInput = document.querySelector("input");
+const searchButton = document.querySelector(".search-btn");
+
+searchButton.addEventListener("click", function () {
+  const searchTerm = searchInput.value.trim();
+  if (searchTerm !== "") {
+    window.location.href = "https://example.com/search?q=" + searchTerm;
+  }
+});

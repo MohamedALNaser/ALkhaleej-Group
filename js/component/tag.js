@@ -124,7 +124,7 @@ for (let i = 0; i < services.length; i++) {
 
   const allExist = serchItems.every((elem) => servName.includes(elem));
 
-  if (allExist) {
+  if (allExist && PageTagName !== "") {
     servData = services[i].data;
     views = services[i].views;
     link = services[i].href;
