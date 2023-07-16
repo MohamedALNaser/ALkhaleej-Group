@@ -153,19 +153,29 @@ document.querySelector(
 document.querySelector(
   ".wp-content .content .content-container article.main-content .servise-img span.servise-name span"
 ).innerHTML = servName.trim().slice(5);
+if (
+  document.querySelector(
+    ".wp-content .content .content-container article.main-content .entery-content p strong"
+  )
+)
+  document.querySelector(
+    ".wp-content .content .content-container article.main-content .entery-content p strong"
+  ).innerHTML = `${servName.trim()}، `;
 
-document.querySelector(
-  ".wp-content .content .content-container article.main-content .entery-content p strong"
-).innerHTML = `${servName.trim()}، `;
-document.querySelector(
-  ".wp-content .content .content-container article.main-content .entery-content p strong"
-).innerHTML = `${servName.trim()}، `;
 document.querySelectorAll(
   ".wp-content .content .content-container article.main-content .entery-content figure.attchement-img figcaption"
 )[0].innerHTML = servName.trim().slice(5);
 document.querySelectorAll(
   ".wp-content .content .content-container article.main-content .entery-content figure.attchement-img figcaption"
 )[1].innerHTML = servName.trim().slice(5);
+
+let pageImgs = document.querySelectorAll("figure img");
+imgSrc = services[padgeId].img;
+if (typeof imgSrc == "object") {
+  pageImgs[0].src = `./.${imgSrc[0]}`;
+  pageImgs[1].src = `./.${imgSrc[1]}`;
+  pageImgs[2].src = `./.${imgSrc[2]}`;
+}
 
 relatedServises(padgeId);
 
