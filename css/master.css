@@ -320,11 +320,13 @@ h6 {
   font-size: 23px;
 }
 .wp-content .content .content-container article.main-content .entery-content h2,
-.wp-content .content .content-container article.main-content .entery-content h3 {
+.wp-content .content .content-container article.main-content .entery-content h3,
+.wp-content .content .content-container article.main-content .entery-content h4 {
   margin: 0 0 0.5em;
 }
 .wp-content .content .content-container article.main-content .entery-content h2 strong,
-.wp-content .content .content-container article.main-content .entery-content h3 strong {
+.wp-content .content .content-container article.main-content .entery-content h3 strong,
+.wp-content .content .content-container article.main-content .entery-content h4 strong {
   font-weight: 600;
 }
 .wp-content .content .content-container article.main-content .entery-content p {
@@ -690,7 +692,7 @@ h6 {
   display: block;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 2px;
   cursor: pointer;
   z-index: 3;
   border: none;

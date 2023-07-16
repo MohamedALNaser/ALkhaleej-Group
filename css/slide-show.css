@@ -41,7 +41,7 @@
   display: block;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 2px;
   cursor: pointer;
   z-index: 3;
   border: none;
