@@ -11,6 +11,16 @@
   -o-transition: all 0.3s linear;
 }
 
+::-moz-selection {
+  background-color: #32beeb;
+  color: #FFFFFF;
+}
+
+::selection {
+  background-color: #32beeb;
+  color: #FFFFFF;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -318,6 +328,9 @@ h6 {
 }
 .wp-content .content .content-container article.main-content .entery-content h3 {
   font-size: 23px;
+}
+.wp-content .content .content-container article.main-content .entery-content h4 {
+  font-size: 18px;
 }
 .wp-content .content .content-container article.main-content .entery-content h2,
 .wp-content .content .content-container article.main-content .entery-content h3,

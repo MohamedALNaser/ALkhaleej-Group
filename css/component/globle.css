@@ -10,6 +10,16 @@
   -o-transition: all 0.3s linear;
 }
 
+::-moz-selection {
+  background-color: #32beeb;
+  color: #FFFFFF;
+}
+
+::selection {
+  background-color: #32beeb;
+  color: #FFFFFF;
+}
+
 a {
   color: #000;
   text-decoration: none;
