@@ -295,7 +295,6 @@ h6 {
 }
 .wp-content .content .content-container article.main-content .servise-img {
   position: relative;
-  margin-bottom: 30px;
 }
 .wp-content .content .content-container article.main-content .servise-img img {
   width: 100%;
@@ -349,7 +348,6 @@ h6 {
 }
 .wp-content .content .content-container article.main-content .entery-content p a {
   color: #32beeb;
-  font-weight: 800;
 }
 .wp-content .content .content-container article.main-content .entery-content p a:hover {
   color: #08f;
