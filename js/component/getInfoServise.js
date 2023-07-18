@@ -59,6 +59,8 @@ function createRelated() {
 
   servicesContent.appendChild(serviseItem);
 }
+// will work on this to handle related artical , now it doesn't work
+
 function relatedServises(padgeId) {
   let flage = true;
   for (let i = 0; i < services.length - 1; i++) {
