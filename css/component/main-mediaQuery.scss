@@ -3,7 +3,7 @@
 // Medium devices (tablets, less than 992px)
 @media screen and (max-width:991.98px) {
     .header {
-        min-height: 70px;
+        min-height: 85px;
         .main-menu {
             padding: 15px;
             form {
@@ -19,6 +19,7 @@
         height: calc(92vh - 80px) !important;
         .entery-header {
             top: 30% !important;
+            padding: 20px !important;
             .info {
                 >span {
                     margin: 0 5px;
@@ -54,13 +55,12 @@
 }
 
 // Small devices (landscape phones, less than 768px)
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 767.99px) {
     .home {
-        height: calc(92vh - 80px) !important;
         .entery-header {
-            top: 25% !important;
+            top: 15% !important;
             h1 {
-                font-size: 36px !important;
+                font-size: 28px !important;
             }
         }
     }
@@ -87,10 +87,14 @@
     .related-articl {
         .related-articl-container {
             .related-articl-item {
+                max-width: 50% !important;
+                padding: 0 8px !important;
+                &:last-child {
+                    display: flex !important;
+                }
                 h3 {
-                    line-height: 1.4 !important;
-                    font-size: 16px;
                     padding-top: 0px !important;
+                    margin-top: 5px;
                 }
             }
         }
@@ -215,7 +219,7 @@
     }
     .related-articl {
         .related-articl-container {
-            flex-direction: column;
+            // flex-direction: column;
             .related-articl-item {
                 max-width: 265px;
                 width: 100% !important;
@@ -237,7 +241,7 @@
         align-items: center;
     }
     .wp-content .related-articl .related-articl-container .related-articl-item h3 {
-        font-size: 21px !important;
+        // font-size: 21px !important;
     }
     .related-articl-item-content p:nth-child(3) {
         font-size: 18px !important;
@@ -246,6 +250,56 @@
         margin: 0 auto;
     }
     .wp-content .related-articl h2 {
-        font-size: 36px;
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 991px) {
+    .wp-content .home .entery-header>p {
+        font-size: 18px;
+        line-height: 23px;
+    }
+    .wp-content .home .entery-header h1 {
+        padding: 0;
+    }
+    .home {
+        margin-bottom: 15px;
+    }
+    .wp-content .content {
+        margin-top: 15px;
+    }
+    .wp-content .content .content-container {
+        padding: 15px;
+    }
+    .wp-content .related-articl .related-articl-container .related-articl-item figure img {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wp-content .home .entery-header h1 {
+        padding-right: 0;
+        padding-left: 30px;
+    }
+    li.breadcrumb-item.active {
+        display: none;
+    }
+    .info {
+        display: none;
+    }
+    a.go-to-content {
+        display: none !important;
+    }
+    .home {
+        height: auto !important;
+        padding: 20px 15px !important;
+        margin-bottom: 15px;
+    }
+    .wp-content .home .container {
+        height: auto !important;
+        margin-top: 15px;
+    }
+    nav.breadcrumb {
+        // padding: 15px 0 0;
     }
 }

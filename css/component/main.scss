@@ -71,7 +71,7 @@ $--main-color :variables.$main-color;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 0px;
+        padding: 10px 15px;
         form {
             direction: rtl;
             position: relative;
@@ -120,8 +120,9 @@ $--main-color :variables.$main-color;
         }
         a {
             color: #fff;
-            font-size: 25px;
-            // margin: 0 10px;
+            font-size: 50px;
+            font-weight: bold;
+            font-family: 'Changa', 'sans-serif';
             position: relative;
             &:hover {
                 color: $--main-color;
@@ -150,29 +151,29 @@ $--main-color :variables.$main-color;
         max-width: 1170px;
         display: flex;
         width: 100%;
-        margin: 12px auto;
+        margin: 5px auto;
         flex-wrap: wrap;
-        padding: 0.25rem 0.5rem;
         list-style: none;
-        border-radius: 0.25rem;
         justify-content: center;
-        font-size: 1.25rem;
+        font-size: 13px;
+        // color: #999999;
         .breadcrumb-item {
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            // text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
         .breadcrumb-item+.breadcrumb-item::before {
             display: inline-block;
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
+            padding-right: 4px;
+            padding-left: 4px;
             content: "/";
         }
     }
     .home {
         direction: rtl;
-        // height: calc( 92vh - 80px);
-        height: calc( 98vh - 80px);
+        height: 700px;
+        // height: calc( 98vh - 80px);
         color: #ffffff;
         min-height: 80px;
+        padding-top: 15px;
         a {
             color: #fafafa;
             &:hover {
@@ -182,14 +183,15 @@ $--main-color :variables.$main-color;
         .container {
             position: relative;
             z-index: 5;
-            height: calc(78vh - 80px);
+            height: 72%;
         }
         .entery-header {
             position: relative;
             z-index: 5;
-            top: 35%;
+            top: 40%;
             text-align: center;
             width: 100%;
+            padding: 0 30px;
             >span {
                 // margin-bottom: 5px;
                 a {
@@ -209,10 +211,19 @@ $--main-color :variables.$main-color;
                 }
             }
             h1 {
-                font-size: 48px;
+                font-size: 40px;
                 margin-top: 5px;
                 margin-bottom: 10px;
+                padding: 0 0 0 75px;
+                font-weight: 500;
+                line-height: 1.2;
+                // font-family: 'Changa', 'sans-serif';
                 text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            }
+            >p {
+                font-size: 22px;
+                margin-bottom: 15px;
+                font-family: 'Changa', 'sans-serif';
             }
             .info {
                 >span {
@@ -229,7 +240,7 @@ $--main-color :variables.$main-color;
             display: block;
             z-index: 3;
             right: 50%;
-            top: 25%;
+            top: 25px;
             width: 55px;
             height: 55px;
             &:hover {
@@ -258,6 +269,7 @@ $--main-color :variables.$main-color;
             margin: 150px auto;
             background-color: #fff;
             padding: 30px;
+            margin-top: 0;
             article.main-content {
                 .servise-img {
                     // max-width: 720px;
@@ -301,6 +313,7 @@ $--main-color :variables.$main-color;
                         margin: 0 0 0.5em;
                         strong {
                             font-weight: 600;
+                            font-family: 'Changa', 'sans-serif';
                         }
                     }
                     p {
@@ -442,11 +455,16 @@ $--main-color :variables.$main-color;
             }
         }
     }
+    .content-container .related-articl .related-articl-container .related-articl-item:last-child {
+        display: none;
+    }
     .related-articl {
         h2 {
-            font-size: 27px;
+            color: #32beeb;
+            font-size: 17px;
+            padding: 0 0 15px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            color: #238cc8;
         }
         .related-articl-container {
             direction: rtl;
@@ -456,27 +474,51 @@ $--main-color :variables.$main-color;
             // gap: 20px 0px;
             .related-articl-item {
                 display: flex;
-                justify-content: space-between;
                 flex-direction: column;
-                gap: 11px;
-                font-size: 16px;
-                font-weight: 300;
-                max-width: 340px;
+                max-width: 33%;
                 width: 100%;
-                margin: 5px 0 20px 0;
+                margin: 0px 0 20px;
+                padding: 0 15px;
+                >a {
+                    position: relative;
+                    // height: 100%;
+                    &::before {
+                        content: "servess";
+                        position: absolute;
+                        bottom: 16px;
+                        left: 15px;
+                        padding: 3px 8px;
+                        color: #fff;
+                        background: #32beeb;
+                        border-radius: 2px;
+                        -webkit-border-radius: 2px;
+                        -moz-border-radius: 2px;
+                        -ms-border-radius: 2px;
+                        -o-border-radius: 2px;
+                    }
+                    &:hover {
+                        color: #fff;
+                        opacity: 0.8;
+                    }
+                }
                 figure {
-                    border-radius: 5px;
+                    border-radius: 3px;
                     overflow: hidden;
                     img {
                         width: 100%;
-                        // max-height: 75px;
+                        max-height: 220px;
                     }
                 }
                 h3 {
                     line-height: 1.6;
                     padding-top: 5px;
+                    font-size: 13px;
                     a {
                         color: #686868;
+                        font-family: 'Changa', 'sans-serif';
+                        &:hover {
+                            color: #32beeb;
+                        }
                     }
                 }
                 p {
@@ -484,7 +526,7 @@ $--main-color :variables.$main-color;
                         margin: 5px 0;
                         color: #ccc;
                         text-align: center;
-                        font-size: 15px;
+                        font-size: 13px;
                         line-height: 1.6;
                         padding-top: 5px;
                         margin-bottom: 20px;

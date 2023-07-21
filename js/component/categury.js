@@ -93,14 +93,13 @@ function createRelated() {
 }
 function relatedServises(categuryName) {
   for (let i = 0; i < services.length; i++) {
-    // console.log(
-    //   categuryName.trim().toLowerCase() ===
-    //     services[i].categury.trim().toLowerCase()
-    // );
     if (
       categuryName.trim().toLowerCase() ===
       services[i].categury.trim().toLowerCase()
     ) {
+      document.querySelector(
+        ".wp-content .related-articl .related-articl-container .related-articl-item > a::before"
+      ).textContent = services[i].categury;
       servData = services[i].data;
       views = services[i].views;
       link = services[i].href;

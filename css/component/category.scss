@@ -1,9 +1,9 @@
 .header {
-    min-height: 80px;
+    min-height: 75px;
 }
 
 .wp-content .breadcrumb {
-    font-size: 16px;
+    // font-size: 16px;
 }
 
 .wp-content .breadcrumb .breadcrumb-item {
@@ -28,19 +28,26 @@
     width: 100%;
     margin: 0px auto;
     background-color: #fff;
-    padding: 2px 30px 30px;
+    padding: 2px 25px 30px;
 }
 
 .wp-content .related-articl h2 {
     text-align: center;
-    font-size: 33px;
+    font-size: 36px;
     color: #000;
+    margin: 22px 0 10px;
+    border: none;
+    font-family: 'Changa';
 }
 
 .related-articl-item a {
-    max-width: 350px;
-    max-height: 225px;
-    width: 50%;
+    max-width: 390px;
+    max-height: 220px;
+    width: 100%;
+}
+
+.wp-content .related-articl .related-articl-container .related-articl-item>a::before {
+    left: 30px;
 }
 
 .related-articl-item a:hover {
@@ -51,6 +58,9 @@
 .related-articl-item a img {
     width: 100%;
     height: 100%;
+    max-height: 220px;
+    max-width: 375px;
+    // height: auto;
 }
 
 .wp-content .related-articl .related-articl-container {
@@ -60,16 +70,25 @@
 .wp-content .related-articl .related-articl-container .related-articl-item {
     flex-direction: row;
     justify-content: flex-start;
-    gap: 0 15px;
+    // gap: 0 15px;
     width: 100%;
-    max-width: 100%;
+    max-width: 100% !important;
+    >a {
+        &::before {
+            // content: "servess";
+        }
+    }
+}
+
+.content-container .related-articl .related-articl-container .related-articl-item:last-child {
+    display: flex !important;
 }
 
 .wp-content .related-articl .related-articl-container .related-articl-item h3 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.4;
     a {
-        color: #2c2f34;
+        color: #333;
     }
 }
 
@@ -92,12 +111,13 @@
     color: #666666;
     font-size: 18px;
     margin-top: 5px;
+    line-height: 1.4;
 }
 
 a.btn {
     // background-color: #32beeb;
     display: inline-block;
-    background-color: #08f;
+    background-color: #32beeb;
     color: #fff;
     padding: 7px 15px;
     margin-top: 10px;
@@ -120,4 +140,24 @@ a.btn:hover {
 
 .footer {
     margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .related-articl-item>a {
+        max-width: 375px;
+        // max-height: 214px;
+        width: 40%;
+    }
+    // .wp-content .related-articl .related-articl-container .related-articl-item h3 {
+    //     font-size: 20px;
+    //     line-height: 1.4;
+    // }
+    .wp-content .related-articl .related-articl-container .related-articl-item p span.servise-date {
+        justify-content: normal;
+        gap: 0 6px;
+        font-size: 12px;
+    }
+    .related-articl-item-content p:nth-child(3) {
+        font-size: 13px;
+    }
 }

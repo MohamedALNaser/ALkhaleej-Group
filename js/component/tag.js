@@ -1,7 +1,7 @@
 import jsonData from "./../../services/services.json" assert { type: "json" };
 let services = jsonData.servise;
 
-let idNum, servData, views, link, servName, imgSrc, desc, categury;
+let divOrder, servData, views, link, servName, imgSrc, desc, categury;
 
 function getMeta(metaName) {
   const metas = document.getElementsByTagName("meta");
@@ -64,7 +64,7 @@ function createRelated() {
   let btn = document.createElement("a");
   btn.classList.add("btn");
   btn.href = `./.${link}`;
-  btn.textContent = "أكمل القراءة >>";
+  btn.textContent = "أكمل القراءة »";
 
   serviseDate.appendChild(spanDate);
   serviseDate.appendChild(spanviews);
@@ -84,60 +84,41 @@ function createRelated() {
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
   img.src = `./.${imgSrc}`;
-
+  serviseItem.style.order = divOrder;
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
   serviseItem.appendChild(serviseItemContent);
 
   servicesContent.appendChild(serviseItem);
 }
-// function relatedServises(categuryName) {
-//   for (let i = 0; i < services.length; i++) {
-//     if (
-//       categuryName.trim().toLowerCase() ===
-//       services[i].categury.trim().toLowerCase()
-//     ) {
-//       servData = services[i].data;
-//       views = services[i].views;
-//       link = services[i].href;
-//       servName = services[i].name;
-//       imgSrc = services[i].img;
-//       desc = services[i].description;
-//       if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
-//         createRelated(servData, views, link, servName, imgSrc, desc);
-//       }
-//     }
-//   }
-// }
+
 let categuryName = getMeta("Pagecategory");
 let PageTagName = getMeta("PageTag");
 
 document.title = `${categuryName} الأرشيف - جداول الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
 document.querySelector("li.breadcrumb-item.category").innerHTML = categuryName;
-// relatedServises(PageTagName);
-
+let PageTagNames = PageTagName.split(",");
 let relatedItems = [];
-for (let i = 0; i < services.length; i++) {
-  servName = services[i].name.split(" ");
-  let serchItems = PageTagName.split(" ");
+PageTagNames.forEach((ele, index) => {
+  for (let i = 0; i < services.length; i++) {
+    servName = services[i].name.trim().split(" ");
+    let serchItems = ele.trim().split(" ");
+    const allExist = serchItems.every((elem) => servName.includes(elem));
 
-  const allExist = serchItems.every((elem) => servName.includes(elem));
-
-  if (allExist && PageTagName !== "") {
-    servData = services[i].data;
-    views = services[i].views;
-    link = services[i].href;
-    servName = services[i].name;
-    imgSrc = services[i].img;
-    desc = services[i].description;
-    // if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
-    createRelated(servData, views, link, servName, imgSrc, desc);
-    // }
-    relatedItems.push(i);
+    if (allExist && PageTagName !== "") {
+      servData = services[i].data;
+      views = services[i].views;
+      link = services[i].href;
+      servName = services[i].name;
+      imgSrc = services[i].img;
+      desc = services[i].description;
+      divOrder = PageTagNames.length - 1 - index;
+      createRelated(servData, views, link, servName, imgSrc, desc, divOrder);
+      relatedItems.push(i);
+    }
   }
-}
-// console.log(relatedItems);
+});
 if (relatedItems.length === 0) {
   document.querySelector(
     ".related-articl-container"
