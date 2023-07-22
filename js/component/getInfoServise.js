@@ -1,7 +1,9 @@
 import jsonData from "./../../services/services.json" assert { type: "json" };
 let services = jsonData.servise;
-
 let idNum, servData, views, link, servName, imgSrc, desc, categury;
+let padgeId = Number(getMeta("pageId"));
+const searchInput = document.querySelector("input");
+const searchButton = document.querySelector(".search-btn");
 
 function getMeta(metaName) {
   const metas = document.getElementsByTagName("meta");
@@ -147,6 +149,17 @@ function getInfo(padgeId) {
     pageImgs[1].src = `./.${imgSrc[1]}`;
     pageImgs[2].src = `./.${imgSrc[2]}`;
   }
+  document.querySelectorAll("p > a").forEach((ele, index) => {
+    for (let i = 0; i < services.length; i++) {
+      servName = services[i].name.trim().split(" ");
+      let serchItems = ele.textContent.trim().split(" ");
+      const allExist = serchItems.every((elem) => servName.includes(elem));
+      if (allExist) {
+        link = services[i].href;
+        ele.href = `./.${link}`;
+      }
+    }
+  });
 }
 function relatedServises() {
   let relatedItems = getRandomNumbers();
@@ -180,19 +193,6 @@ const getRandomNumbers = () => {
 
   return numbers;
 };
-relatedServises();
-let padgeId = Number(getMeta("pageId"));
-getInfo(padgeId);
-
-const searchInput = document.querySelector("input");
-const searchButton = document.querySelector(".search-btn");
-
-searchButton.addEventListener("click", function () {
-  const searchTerm = searchInput.value.trim();
-  if (searchTerm !== "") {
-    window.location.href = "https://example.com/search?q=" + searchTerm;
-  }
-});
 function shareButtom() {
   link = window.location.href;
   link = `https://mohamedalnaser.github.io/ALkhaleej-Group/`;
@@ -244,4 +244,13 @@ function shareButtom() {
     }
   });
 }
+searchButton.addEventListener("click", function () {
+  const searchTerm = searchInput.value.trim();
+  if (searchTerm !== "") {
+    window.location.href = "https://example.com/search?q=" + searchTerm;
+  }
+});
+
+relatedServises();
+getInfo(padgeId);
 shareButtom();

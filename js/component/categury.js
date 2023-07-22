@@ -106,9 +106,7 @@ function relatedServises(categuryName) {
       servName = services[i].name;
       imgSrc = services[i].img;
       desc = services[i].description;
-      if (servData !== "" && link !== "" && servName !== "" && imgSrc !== "") {
-        createRelated(servData, views, link, servName, imgSrc, desc);
-      }
+      createRelated(servData, views, link, servName, imgSrc, desc);
     }
   }
 }
