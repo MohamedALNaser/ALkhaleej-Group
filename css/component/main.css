@@ -108,7 +108,7 @@ h6 {
 .header {
   position: relative;
   z-index: 1000;
-  min-height: 100px;
+  min-height: 80px;
   background-color: #1a1a1a;
 }
 .header .container {
@@ -276,7 +276,6 @@ h6 {
   display: block;
   z-index: 3;
   right: 50%;
-  top: 25px;
   width: 55px;
   height: 55px;
 }

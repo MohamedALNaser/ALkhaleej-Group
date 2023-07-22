@@ -111,7 +111,7 @@
 }
 @media screen and (min-width: 320px) and (max-width: 575.98px) {
   .header .main-menu a {
-    font-size: 16px;
+    font-size: 30px;
   }
   .breadcrumb {
     font-size: 0.8rem !important;
@@ -200,6 +200,12 @@
   .wp-content .related-articl .related-articl-container .related-articl-item figure img {
     max-height: 200px;
   }
+  .wp-content .content {
+    margin-top: 0;
+  }
+  .related-articl-item-content p:nth-child(3) {
+    font-size: 13px;
+  }
 }
 @media (max-width: 767px) {
   .wp-content .home .entery-header h1 {
@@ -218,7 +224,7 @@
   .home {
     height: auto !important;
     padding: 20px 15px !important;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   .wp-content .home .container {
     height: auto !important;
