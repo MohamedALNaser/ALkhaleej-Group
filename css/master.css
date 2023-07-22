@@ -504,10 +504,9 @@ h6 {
 .wp-content .related-articl .related-articl-container .related-articl-item {
   display: flex;
   flex-direction: column;
-  max-width: 33%;
+  max-width: 30%;
   width: 100%;
   margin: 0px 0 20px;
-  padding: 0 15px;
 }
 .wp-content .related-articl .related-articl-container .related-articl-item > a {
   position: relative;
@@ -550,9 +549,11 @@ h6 {
 .wp-content .related-articl .related-articl-container .related-articl-item h3 a:hover {
   color: #32beeb;
 }
+.wp-content .related-articl .related-articl-container .related-articl-item p {
+  margin: 8px 0 0;
+  color: #767676;
+}
 .wp-content .related-articl .related-articl-container .related-articl-item p span.servise-date {
-  margin: 5px 0;
-  color: #ccc;
   text-align: center;
   font-size: 13px;
   line-height: 1.6;
@@ -560,7 +561,7 @@ h6 {
   margin-bottom: 20px;
 }
 .wp-content .related-articl .related-articl-container .related-articl-item p span.servise-date i {
-  margin: 0 5px;
+  padding-left: 6px;
 }
 
 .footer {
@@ -907,6 +908,9 @@ body {
 .wp-content .section .wp-section-content .services .services-content .servise-item {
   width: 350px;
   margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .wp-content .section .wp-section-content .services .services-content .servise-item .servise-date {
   display: flex;

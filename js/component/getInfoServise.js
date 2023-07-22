@@ -36,10 +36,29 @@ function createRelated() {
 
   let articlLink = document.createElement("a");
   articlLink.href = `./.${link}`;
+
+  let serviseDateP = document.createElement("p");
+  let serviseDate = document.createElement("span");
+  serviseDate.classList.add("servise-date");
+  let spanDate = document.createElement("span");
+  spanDate.classList.add("data");
+  let spanDataIcon = document.createElement("i");
+  spanDataIcon.classList.add("fa-sharp", "fa-regular", "fa-clock");
+  // spanDataIcon.classList.add("fa", "fa-calendar");
+  let spanDateContent = document.createElement("span");
+  spanDateContent.textContent = servData;
+
   itemfigure.appendChild(img);
   articlLink.appendChild(itemfigure);
   serviseItem.appendChild(articlLink);
   serviseItem.appendChild(serviseItemContent);
+
+  serviseDate.appendChild(spanDate);
+  spanDate.appendChild(spanDataIcon);
+  spanDate.appendChild(spanDateContent);
+  serviseDateP.appendChild(serviseDate);
+
+  serviseItem.appendChild(serviseDateP);
 
   servicesContent.appendChild(serviseItem);
 }
@@ -120,6 +139,7 @@ function getInfo(padgeId) {
     ".wp-content .content .content-container article.main-content .entery-content figure.attchement-img figcaption"
   )[1].innerHTML = servName;
 
+  document.querySelector(".header .main-menu a").innerHTML = "مجموعة الخليج";
   let pageImgs = document.querySelectorAll("figure img");
   imgSrc = services[padgeId].img;
   if (typeof imgSrc == "object") {
@@ -173,9 +193,55 @@ searchButton.addEventListener("click", function () {
     window.location.href = "https://example.com/search?q=" + searchTerm;
   }
 });
-let share = [];
-let share_links = document.querySelectorAll(".share-links");
-share_links.forEach((link, index) => {
-  link.href = share[index];
-  link.target = "_blank";
-});
+function shareButtom() {
+  link = window.location.href;
+  link = `https://mohamedalnaser.github.io/ALkhaleej-Group/`;
+  servName = services[padgeId].name;
+  let share = [
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`,
+    `https://twitter.com/share?text=${encodeURIComponent(
+      servName.trim()
+    )}&url=${encodeURIComponent(link)}`,
+    `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+      link
+    )}&title=${encodeURIComponent(servName.trim())}
+    `,
+    `https://www.tumblr.com/share/link?url=${encodeURIComponent(
+      link
+    )}&name=${encodeURIComponent(servName.trim())}`,
+    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
+      link
+    )}&description=${encodeURIComponent(
+      servName.trim()
+    )}&media=${encodeURIComponent(imgSrc)}`,
+    `https://reddit.com/submit?url=${encodeURIComponent(
+      link
+    )}&title=${encodeURIComponent(servName.trim())}`,
+    `https://vk.com/share.php?url=${encodeURIComponent(link)}`,
+    `mailto:?subject=Check%20out%20this%20article!&body=${encodeURIComponent(
+      link
+    )}`,
+    "#",
+  ];
+
+  let share_links = document.querySelectorAll(".share-links a");
+  share_links.forEach((link, index) => {
+    if (index == share_links.length - 1) return;
+    link.href = share[index];
+    link.target = "_blank";
+  });
+  share_links[share_links.length - 1].addEventListener("click", () => {
+    window.print();
+  });
+
+  let logoText = document.querySelector(".header .main-menu a");
+  logoText.style.transition = " display 0.3s linear";
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      logoText.style.display = "none";
+    } else {
+      logoText.style.display = "block";
+    }
+  });
+}
+shareButtom();

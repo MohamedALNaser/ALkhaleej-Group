@@ -64,6 +64,9 @@ $--main-color :#32beeb;
                     .servise-item {
                         width: 350px;
                         margin: 5px 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
                         .servise-date {
                             display: flex;
                             justify-content: space-between;

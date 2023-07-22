@@ -475,10 +475,10 @@ $--main-color :variables.$main-color;
             .related-articl-item {
                 display: flex;
                 flex-direction: column;
-                max-width: 33%;
+                max-width: 30%;
                 width: 100%;
                 margin: 0px 0 20px;
-                padding: 0 15px;
+                // padding: 0 15px;
                 >a {
                     position: relative;
                     // height: 100%;
@@ -522,16 +522,19 @@ $--main-color :variables.$main-color;
                     }
                 }
                 p {
+                    margin: 8px 0 0;
+                    color: #767676;
                     span.servise-date {
-                        margin: 5px 0;
-                        color: #ccc;
+                        // margin: 5px 0;
+                        // color: #ccc;
                         text-align: center;
                         font-size: 13px;
                         line-height: 1.6;
                         padding-top: 5px;
                         margin-bottom: 20px;
                         i {
-                            margin: 0 5px;
+                            // margin: 0 5px;
+                            padding-left: 6px;
                         }
                     }
                 }
