@@ -65,7 +65,7 @@ h6 {
   width: 60px;
   height: 60px;
   bottom: 30px;
-  left: 40px;
+  right: 40px;
   background-color: #25d366;
   color: #FFF;
   border-radius: 50px;
@@ -700,4 +700,80 @@ h6 {
 .footer .wp-footer-content .col ul.content a h4.sevice-name {
   margin: 4px 0 0px;
   font-size: 18px;
+}
+
+.check-also-box {
+  position: fixed;
+  z-index: 98;
+  padding: 30px;
+  bottom: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  max-width: 340px;
+  direction: rtl;
+  font-family: "Changa";
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+.check-also-box .check-also-globl-titel {
+  font-size: 17px;
+  padding: 0 0 15px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.check-also-box .check-also-globl-titel::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: -5px;
+  border-top: 5px solid #2c2f34;
+  right: 0;
+  border-left: 5px solid transparent;
+  border-right: 0;
+}
+.check-also-box .check-also-globl-titel a {
+  font-family: "tiefonticon";
+  color: #e74c3c;
+  transition: color 0.15s;
+}
+.check-also-box .check-also-globl-titel h3 {
+  font-size: 15px;
+}
+.check-also-box .check-also-item a {
+  display: block;
+}
+.check-also-box .check-also-item a img {
+  width: 278px;
+  height: 157px;
+}
+.check-also-box .check-also-item a img:hover {
+  color: #fff;
+  opacity: 0.8;
+}
+.check-also-box .check-also-item a h3 {
+  font-size: 18px;
+  line-height: 1.3em;
+}
+.check-also-box .check-also-item a h3:hover {
+  color: #32beeb;
+}
+
+.hide-check-also {
+  display: none;
+}
+
+@media screen and (max-width: 990.99px) {
+  .check-also-box {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */

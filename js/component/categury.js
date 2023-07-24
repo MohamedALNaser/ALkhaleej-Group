@@ -111,7 +111,6 @@ function relatedServises(categuryName) {
   }
 }
 let categuryName = getMeta("Pagecategory");
-
 document.title = `${categuryName} الأرشيف - جداول الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
 // dont use categuryName , all servise its categury is the same categiry

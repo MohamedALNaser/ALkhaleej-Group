@@ -105,7 +105,6 @@ PageTagNames.forEach((ele, index) => {
     servName = services[i].name.trim().split(" ");
     let serchItems = ele.trim().split(" ");
     const allExist = serchItems.every((elem) => servName.includes(elem));
-
     if (allExist && PageTagName !== "") {
       servData = services[i].data;
       views = services[i].views;
@@ -133,13 +132,3 @@ if (relatedItems.length === 0) {
     padding: 14px;
   `;
 }
-
-// let logoText = document.querySelector(".header .main-menu a");
-// logoText.style.transition = " display 0.3s linear";
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY > 50) {
-//     logoText.style.display = "none";
-//   } else {
-//     logoText.style.display = "block";
-//   }
-// });

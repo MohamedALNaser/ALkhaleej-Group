@@ -27,4 +27,8 @@ a.tag {
 }
 a.tag:hover {
   color: #32beeb;
+}
+
+span.tag::before {
+  content: "#";
 }/*# sourceMappingURL=tag.css.map */

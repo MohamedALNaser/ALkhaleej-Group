@@ -162,7 +162,7 @@ function getInfo(padgeId) {
   });
 }
 function relatedServises() {
-  let relatedItems = getRandomNumbers();
+  let relatedItems = getRandomNumbers(4);
   for (let i = 0; i < 4; i++) {
     servData = services[relatedItems[i]].data;
     views = services[relatedItems[i]].views;
@@ -181,10 +181,10 @@ function relatedServises() {
     createRelated(servData, views, link, servName, imgSrc, desc);
   }
 }
-const getRandomNumbers = () => {
+const getRandomNumbers = (num) => {
   const numbers = [];
 
-  while (numbers.length < 4) {
+  while (numbers.length < num) {
     const randomNumber = Math.floor(Math.random() * 46);
     if (!numbers.includes(randomNumber)) {
       numbers.push(randomNumber);
@@ -250,7 +250,79 @@ searchButton.addEventListener("click", function () {
     window.location.href = "https://example.com/search?q=" + searchTerm;
   }
 });
+function readAlso() {
+  let itemIndex = getRandomNumbers(1);
+  link = services[itemIndex].href;
 
+  document.querySelector(".wp-content .wp-content-container");
+  let checkAlso = document.createElement("div");
+  checkAlso.classList.add("check-also-box");
+  let checkAlsoGloblTitel = document.createElement("div");
+  checkAlsoGloblTitel.classList.add("check-also-globl-titel");
+  let checkAlsoGloblTitelH3 = document.createElement("h3");
+  checkAlsoGloblTitelH3.textContent = "شاهد أيضاً";
+  checkAlsoGloblTitel.appendChild(checkAlsoGloblTitelH3);
+  let checkAlsoRemove = document.createElement("a");
+  checkAlsoRemove.classList.add("check-also-remove");
+  checkAlsoRemove.href = "#";
+  checkAlsoRemove.textContent = "X";
+  checkAlsoGloblTitel.appendChild(checkAlsoRemove);
+  checkAlsoRemove.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAlso.classList.add("hide-check-also");
+  });
+
+  let checkAlsoItem = document.createElement("div");
+  checkAlsoItem.classList.add("check-also-item");
+  let articlLink = document.createElement("a");
+  articlLink.href = `./.${link}`;
+  let checkAlsoItemImg = document.createElement("img");
+  checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
+  articlLink.appendChild(checkAlsoItemImg);
+  checkAlsoItem.appendChild(articlLink);
+  let checkAlsoItemContentH3 = document.createElement("h3");
+  let servisePage = document.createElement("a");
+  servisePage.href = `./.${link}`;
+  servisePage.textContent = servName;
+  servisePage.appendChild(checkAlsoItemContentH3);
+  // serviseItemContent.appendChild(checkAlsoItemContentH3);
+  checkAlsoItemContentH3.textContent = services[itemIndex].name;
+  checkAlsoItem.appendChild(servisePage);
+  checkAlso.appendChild(checkAlsoGloblTitel);
+  checkAlso.appendChild(checkAlsoItem);
+  document
+    .querySelector(".wp-content .wp-content-container")
+    .appendChild(checkAlso);
+  if (
+    document.querySelector(".tags").offsetTop <
+      window.scrollY + window.innerHeight &&
+    window.innerWidth > 991
+  ) {
+    checkAlso.style.cssText = `
+    left: 0;
+    transform: translate(0%,0%);`;
+  } else {
+    checkAlso.style.cssText = `
+    left: 0;
+    transform: translate(-100%,0%);`;
+  }
+  window.addEventListener("scroll", () => {
+    if (
+      document.querySelector(".tags").offsetTop <
+        window.scrollY + window.innerHeight &&
+      window.innerWidth > 991
+    ) {
+      checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(0%,0%);`;
+    } else {
+      checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(-100%,0%);`;
+    }
+  });
+}
+readAlso();
 relatedServises();
 getInfo(padgeId);
 shareButtom();
