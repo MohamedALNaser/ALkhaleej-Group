@@ -482,8 +482,9 @@ $--main-color :variables.$main-color;
                 >a {
                     position: relative;
                     // height: 100%;
-                    &::before {
-                        content: "servess";
+                    span {
+                        // content: "servess";    
+                        font-size: 13px;
                         position: absolute;
                         bottom: 16px;
                         left: 15px;
@@ -743,11 +744,23 @@ $--main-color :variables.$main-color;
     .check-also-item {
         a {
             display: block;
+            position: relative;
+            span {
+                // content: "servess";
+                font-size: 13px;
+                position: absolute;
+                bottom: 16px;
+                left: 15px;
+                padding: 3px 8px;
+                color: #fff;
+                background: #32beeb;
+                border-radius: 2px;
+            }
             img {
-                &:hover {
-                    color: #fff;
-                    opacity: 0.8;
-                }
+                // &:hover {
+                //     color: #fff;
+                //     opacity: 0.8;
+                // }
                 width: 278px;
                 height: 157px;
             }

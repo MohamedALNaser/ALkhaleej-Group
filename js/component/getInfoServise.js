@@ -35,6 +35,8 @@ function createRelated() {
   let itemfigure = document.createElement("figure");
   let img = document.createElement("img");
   img.src = `./.${imgSrc}`;
+  let spanContent = document.createElement("span");
+  spanContent.innerText = categury;
 
   let articlLink = document.createElement("a");
   articlLink.href = `./.${link}`;
@@ -50,6 +52,10 @@ function createRelated() {
   let spanDateContent = document.createElement("span");
   spanDateContent.textContent = servData;
 
+  itemfigure.appendChild(spanContent);
+  if (categury.toLowerCase() == "Uncategorized".toLowerCase()) {
+    spanContent.style.display = "none";
+  }
   itemfigure.appendChild(img);
   articlLink.appendChild(itemfigure);
   serviseItem.appendChild(articlLink);
@@ -168,6 +174,7 @@ function relatedServises() {
     views = services[relatedItems[i]].views;
     link = services[relatedItems[i]].href;
     servName = services[relatedItems[i]].name;
+    categury = services[relatedItems[i]].categury.trim();
     if (servName.includes("خصم")) {
       // console.log(servName);
       // console.log(servName.indexOf("خصم"));
@@ -178,7 +185,7 @@ function relatedServises() {
     }
     imgSrc = services[relatedItems[i]].img;
     desc = services[relatedItems[i]].description;
-    createRelated(servData, views, link, servName, imgSrc, desc);
+    createRelated(servData, views, link, servName, imgSrc, desc, categury);
   }
 }
 const getRandomNumbers = (num) => {
@@ -253,8 +260,6 @@ searchButton.addEventListener("click", function () {
 function readAlso() {
   let itemIndex = getRandomNumbers(1);
   link = services[itemIndex].href;
-
-  document.querySelector(".wp-content .wp-content-container");
   let checkAlso = document.createElement("div");
   checkAlso.classList.add("check-also-box");
   let checkAlsoGloblTitel = document.createElement("div");
@@ -278,6 +283,9 @@ function readAlso() {
   articlLink.href = `./.${link}`;
   let checkAlsoItemImg = document.createElement("img");
   checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
+  let spanContent = document.createElement("span");
+  spanContent.innerText = services[itemIndex].categury;
+  articlLink.appendChild(spanContent);
   articlLink.appendChild(checkAlsoItemImg);
   checkAlsoItem.appendChild(articlLink);
   let checkAlsoItemContentH3 = document.createElement("h3");
@@ -290,38 +298,77 @@ function readAlso() {
   checkAlsoItem.appendChild(servisePage);
   checkAlso.appendChild(checkAlsoGloblTitel);
   checkAlso.appendChild(checkAlsoItem);
+
   document
     .querySelector(".wp-content .wp-content-container")
     .appendChild(checkAlso);
-  if (
-    document.querySelector(".tags").offsetTop <
-      window.scrollY + window.innerHeight &&
-    window.innerWidth > 991
-  ) {
-    checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(0%,0%);`;
-  } else {
-    checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(-100%,0%);`;
-  }
-  window.addEventListener("scroll", () => {
+  let lastPInArtical = document.querySelectorAll(
+    ".wp-content .wp-content-container article.main-content p"
+  )[
+    document.querySelectorAll(
+      ".wp-content .wp-content-container article.main-content p"
+    ).length - 1
+  ];
+  // lastPInArtical.insertAdjacentElement("afterend",checkAlso)
+  if (document.querySelector(".tags")) {
     if (
       document.querySelector(".tags").offsetTop <
         window.scrollY + window.innerHeight &&
       window.innerWidth > 991
     ) {
       checkAlso.style.cssText = `
-      left: 0;
-      transform: translate(0%,0%);`;
+    left: 0;
+    transform: translate(0%,0%);`;
     } else {
       checkAlso.style.cssText = `
+    left: 0;
+    transform: translate(-100%,0%);`;
+    }
+    window.addEventListener("scroll", () => {
+      if (
+        document.querySelector(".tags").offsetTop <
+          window.scrollY + window.innerHeight &&
+        window.innerWidth > 991
+      ) {
+        checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(0%,0%);`;
+      } else {
+        checkAlso.style.cssText = `
       left: 0;
       transform: translate(-100%,0%);`;
+      }
+    });
+  } else {
+    if (
+      lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
+      window.innerWidth > 991
+    ) {
+      checkAlso.style.cssText = `
+    left: 0;
+    transform: translate(0%,0%);`;
+    } else {
+      checkAlso.style.cssText = `
+    left: 0;
+    transform: translate(-100%,0%);`;
     }
-  });
+    window.addEventListener("scroll", () => {
+      if (
+        lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
+        window.innerWidth > 991
+      ) {
+        checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(0%,0%);`;
+      } else {
+        checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(-100%,0%);`;
+      }
+    });
+  }
 }
+
 readAlso();
 relatedServises();
 getInfo(padgeId);
