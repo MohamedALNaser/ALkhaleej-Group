@@ -1,8 +1,5 @@
-// .footer .wp-footer-content .col ul.content a
-// .footer .wp-footer-content .col ul.content li.sevice span.sevice-data
-// .footer .wp-footer-content .col ul.content li.sevice h4.sevice-name
 import jsonData from "./../../services/services.json" assert { type: "json" };
-// console.log(jsonData);
+
 let services = jsonData.servise;
 let id, servData, link, servName;
 let i;

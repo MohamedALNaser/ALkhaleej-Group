@@ -3,7 +3,7 @@ let services = jsonData.servise;
 
 let servData, views, link, servName, imgSrc, desc, categury, servBody;
 // const searchInput = document.querySelector("input");
-const searchButton = document.querySelector(".search-btn");
+// const searchButton = document.querySelector(".search-btn");
 
 function createRelated() {
   // servData, link, servName, imgSrc
@@ -86,16 +86,16 @@ function createRelated() {
   servicesContent.appendChild(serviseItem);
 }
 
-searchButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  const serchItems = document.getElementById("serchTerm").value;
-  if (serchItems !== "") {
-    const url = `https://example.com/search?name=${encodeURIComponent(
-      serchItems
-    )}`;
-    window.location.href = url;
-  }
-});
+// searchButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   // const serchItems = document.getElementById("serchTerm").value;
+//   // if (serchItems !== "") {
+//   //   const url = `https://example.com/search?searchName=${encodeURIComponent(
+//   //     serchItems
+//   //   )}`;
+//   //   window.location.href = url;
+//   // }
+// });
 
 const urlParams = new URLSearchParams(window.location.search);
 const serchItems = urlParams.get("searchName");

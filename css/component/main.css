@@ -57,6 +57,7 @@ h6 {
 }
 
 body {
+  font-family: "Noto Kufi Arabic", sans-serif;
   position: relative;
 }
 
@@ -296,8 +297,6 @@ input.search-submit:hover {
 .header .main-menu .logo img {
   max-width: 120px;
   max-height: 120px;
-  background-color: #fff;
-  margin: 14px;
 }
 .header .main-menu a {
   color: #fff;

@@ -35,8 +35,8 @@ function createRelated() {
   let spanDate = document.createElement("span");
   spanDate.classList.add("data");
   let spanDataIcon = document.createElement("i");
-  //   spanDataIcon.classList.add("fa-sharp", "fa-regular", "fa-clock");
-  spanDataIcon.classList.add("fa", "fa-calendar");
+  spanDataIcon.classList.add("fa-sharp", "fa-regular", "fa-clock");
+  // spanDataIcon.classList.add("fa", "fa-calendar");
   let spanDateContent = document.createElement("span");
   spanDateContent.textContent = servData;
 
@@ -44,7 +44,6 @@ function createRelated() {
   spanviews.classList.add("views");
   let spanViewsIcon = document.createElement("i");
   spanViewsIcon.classList.add("fa-solid", "fa-fire");
-  // spanViewsIcon.style.color = "#fafafa";
   let spanViewsContent = document.createElement("span");
   if (views > 500 && views < 2000) {
     spanviews.style.color = "#f47512";
@@ -84,7 +83,9 @@ function createRelated() {
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
   img.src = `./.${imgSrc}`;
-
+  let spanContent = document.createElement("span");
+  spanContent.innerText = categury;
+  itemfigure.appendChild(spanContent);
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
   serviseItem.appendChild(serviseItemContent);
@@ -97,16 +98,14 @@ function relatedServises(categuryName) {
       categuryName.trim().toLowerCase() ===
       services[i].categury.trim().toLowerCase()
     ) {
-      document.querySelector(
-        ".wp-content .related-articl .related-articl-container .related-articl-item > a::before"
-      ).textContent = services[i].categury;
       servData = services[i].data;
       views = services[i].views;
       link = services[i].href;
       servName = services[i].name;
       imgSrc = services[i].img;
       desc = services[i].description;
-      createRelated(servData, views, link, servName, imgSrc, desc);
+      categury = services[i].categury;
+      createRelated(servData, views, link, servName, imgSrc, desc, categury);
     }
   }
 }
