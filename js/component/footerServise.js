@@ -40,3 +40,35 @@ footerItemLink.forEach((e, index) => {
     footerLIsDate[index].innerHTML = servData;
   }
 });
+let overlay = `
+<div class="overlay">
+        <div class="close-overlay">
+            x
+        </div>
+        <form action="./../search.html" method="">
+            <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن"
+                autocomplete="off" value="">
+            <button class="search-btn">
+                <span>
+                    <i class="fa fa-search"></i>
+                </span>
+            </button>
+        </form>
+        </div>
+        <a href=" https://api.whatsapp.com/send?phone=+966566227646&amp;text=" class=" float " target=" _blank ">
+          <i class=" fa-brands fa-whatsapp fa-x my-float "></i>
+        </a>
+        <a href=" tel:0566227646 " class=" tel ">0566227646 <i class=" fa-solid fa-phone "></i></a>
+    `;
+document.body.innerHTML += overlay;
+// document.body.appendChild(footerItemLink);
+document
+  .querySelector(".header .main-menu .menu-spans")
+  .addEventListener("click", () => {
+    document.querySelector(".overlay").classList.add("active");
+  });
+document
+  .querySelector(".overlay .close-overlay")
+  .addEventListener("click", () => {
+    document.querySelector(".overlay").classList.remove("active");
+  });

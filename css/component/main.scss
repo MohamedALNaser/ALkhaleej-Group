@@ -11,43 +11,6 @@
 
 // #32beeb
 $--main-color :variables.$main-color;
-.float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-    .my-float {
-        margin-top: 16px;
-    }
-}
-
-.tel {
-    background-color: $--main-color;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
-    i {
-        font-size: 120%;
-        margin-left: 5px;
-    }
-}
-
 .container {
     width: 100%;
     >div {
@@ -95,104 +58,6 @@ $--main-color :variables.$main-color;
     }
 }
 
-.overlay {
-    display: none;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    z-index: 1001;
-    padding: 60px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    transform: translate(-100%);
-    -webkit-transform: translate(-100%);
-    -moz-transform: translate(-100%);
-    -ms-transform: translate(-100%);
-    -o-transform: translate(-100%);
-    transition: all 0.5s linear;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    &.active {
-        //display: block;
-        transform: translate(0%);
-        -webkit-transform: translate(0%);
-        -moz-transform: translate(0%);
-        -ms-transform: translate(0%);
-        -o-transform: translate(0%);
-    }
-    .close-overlay {
-        font-family: "tiefonticon";
-        color: #e74c3c;
-        transition: color 0.15s;
-        font-size: 30px;
-        cursor: pointer;
-    }
-}
-
-form.search-form {
-    position: relative;
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.search-field {
-    width: 73%;
-    padding: 8px 15px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #2c2f34;
-    font-size: 13px;
-    outline: none;
-    padding: 5px;
-    line-height: 23px;
-    border-radius: 2px;
-    transition: background 0.3s, border 0.3s;
-    max-width: 100%;
-    background-color: transparent;
-}
-
-.search-field:focus {
-    border-color: #32beeb;
-    background-color: #fff;
-}
-
-.search-field:hover {
-    background-color: rgba(0, 0, 0, 0.03);
-}
-
-input.search-submit {
-    background-color: #32beeb;
-    color: #FFFFFF;
-    width: 27%;
-    position: relative;
-    color: #fff;
-    padding: 7px 15px;
-    margin: 0;
-    margin-right: 2%;
-    font-size: 13px;
-    display: inline-block;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    vertical-align: middle;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-
-input.search-submit:hover {
-    background-color: #08f;
-    /* background-color: #2c2f34; */
-}
-
 .wp-content {
     background-image: url(./../../images/villa-pascucci.jpg);
     background-repeat: no-repeat;
@@ -218,10 +83,10 @@ input.search-submit:hover {
         list-style: none;
         justify-content: center;
         font-size: 13px;
-        // color: #999999;
-        .breadcrumb-item {
-            // text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-        }
+        // // color: #999999;
+        // .breadcrumb-item {
+        //     // text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        // }
         .breadcrumb-item+.breadcrumb-item::before {
             display: inline-block;
             padding-right: 4px;

@@ -60,6 +60,43 @@ body {
   position: relative;
 }
 
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 111;
+}
+.float .my-float {
+  margin-top: 16px;
+}
+
+.tel {
+  background-color: #32beeb;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 110;
+}
+.tel i {
+  font-size: 120%;
+  margin-left: 5px;
+}
+
 form {
   direction: rtl;
   position: relative;
@@ -96,105 +133,32 @@ form button:hover {
   color: #32beeb;
 }
 
-:root {
-  --wp-main-margin: 20px;
+.overlay form {
+  width: calc(100% - 60px);
 }
-
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 30px;
-  right: 40px;
-  background-color: #25d366;
-  color: #FFF;
+.overlay form input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
+  padding: 7px 45px;
+  font-size: 13px;
 }
-.float .my-float {
-  margin-top: 16px;
-}
-
-.tel {
-  background-color: #32beeb;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99;
-}
-.tel i {
-  font-size: 120%;
-  margin-left: 5px;
-}
-
-.container {
-  width: 100%;
-}
-.container > div {
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-.header {
-  position: relative;
-  z-index: 1000;
-  min-height: 80px;
-  background-color: #1a1a1a;
-}
-.header .container {
-  position: fixed;
-  background-color: #1a1a1a;
-}
-.header .main-menu {
-  width: 100%;
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-}
-.header .main-menu .logo {
-  min-width: 120px;
-  min-height: 120px;
-}
-.header .main-menu .logo img {
-  max-width: 120px;
-  max-height: 120px;
-  background-color: #fff;
-  margin: 14px;
-}
-.header .main-menu a {
-  color: #fff;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: "Changa", "sans-serif";
-  position: relative;
-}
-.header .main-menu a:hover {
-  color: #32beeb;
+.overlay form button {
+  color: #ffffff;
 }
 
 .overlay {
-  display: none;
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
-  z-index: 1001;
-  padding: 60px;
+  background-color: #1f2024;
+  z-index: 110;
+  padding: 60px 0 0;
   flex-direction: column;
   align-items: center;
   gap: 12px;
@@ -203,11 +167,11 @@ form button:hover {
   -moz-transform: translate(-100%);
   -ms-transform: translate(-100%);
   -o-transform: translate(-100%);
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
+  background: #161619;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  transition: 0.5s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 }
 .overlay.active {
   transform: translate(0%);
@@ -218,10 +182,24 @@ form button:hover {
 }
 .overlay .close-overlay {
   font-family: "tiefonticon";
-  color: #e74c3c;
+  color: #fff;
   transition: color 0.15s;
-  font-size: 30px;
   cursor: pointer;
+  font-size: 27px;
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  text-align: center;
+}
+.overlay .close-overlay:hover {
+  color: #e74c3c;
 }
 
 form.search-form {
@@ -279,6 +257,57 @@ input.search-submit {
 input.search-submit:hover {
   background-color: #08f;
   /* background-color: #2c2f34; */
+}
+
+:root {
+  --wp-main-margin: 20px;
+}
+
+.container {
+  width: 100%;
+}
+.container > div {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  z-index: 1000;
+  min-height: 80px;
+  background-color: #1a1a1a;
+}
+.header .container {
+  position: fixed;
+  background-color: #1a1a1a;
+}
+.header .main-menu {
+  width: 100%;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+.header .main-menu .logo {
+  min-width: 120px;
+  min-height: 120px;
+}
+.header .main-menu .logo img {
+  max-width: 120px;
+  max-height: 120px;
+  background-color: #fff;
+  margin: 14px;
+}
+.header .main-menu a {
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Changa", "sans-serif";
+  position: relative;
+}
+.header .main-menu a:hover {
+  color: #32beeb;
 }
 
 .wp-content {
