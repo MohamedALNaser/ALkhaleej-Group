@@ -95,7 +95,7 @@ function createRelated() {
 let categuryName = getMeta("Pagecategory");
 let PageTagName = getMeta("PageTag");
 
-document.title = `${categuryName} الأرشيف - جداول الخليج`;
+document.title = `${categuryName} الأرشيف - مجموعة الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
 document.querySelector("li.breadcrumb-item.category").innerHTML = categuryName;
 let PageTagNames = PageTagName.split(",");
