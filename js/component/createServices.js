@@ -98,25 +98,3 @@ for (i = services.length - 1; i >= 0; i--) {
   create(id, servData, views, link, servName, imgSrc, desc);
   // }
 }
-// let allBtn = document.querySelector(".all");
-// allBtn.addEventListener("click", () => {
-//   for (i = i; i >= 0; i--) {
-//     id = services[i].id;
-//     servData = services[i].data;
-//     views = services[i].views;
-//     link = services[i].href;
-//     servName = services[i].name;
-//     imgSrc = services[i].img;
-//     desc = services[i].description;
-//     if (
-//       servData !== "" &&
-//       views !== "" &&
-//       link !== "" &&
-//       servName !== "" &&
-//       imgSrc !== "" &&
-//       desc !== ""
-//     ) {
-//       create(id, servData, views, link, servName, imgSrc, desc);
-//     }
-//   }
-// });

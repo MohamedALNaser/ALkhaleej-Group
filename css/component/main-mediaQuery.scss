@@ -1,6 +1,12 @@
 // breakpoins: 320px, 480px, 768px, 1024px, 1200px, 1600px
 // mediaQuery: mobile, tablet, desktop, largeDesktop
 // Medium devices (tablets, less than 992px)
+@media screen and (min-width:992px) {
+    .menu-spans {
+        display: none;
+    }
+}
+
 @media screen and (max-width:991.98px) {
     .header {
         min-height: 85px;
@@ -9,11 +15,32 @@
             form {
                 width: 40px;
                 height: 40px;
-                input {
+                display: none;
+                input,
+                button {
                     display: none;
                 }
             }
+            $menu-spans:20px;
+            .menu-spans {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // height: 100%;
+                width: $menu-spans;
+                // height: $menu-spans;
+                cursor: pointer;
+                span {
+                    margin-bottom: 3px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                }
+            }
         }
+        // .active {
+        //     display: inline-block !important;
+        // }
     }
     .home {
         height: calc(92vh - 80px) !important;

@@ -57,6 +57,46 @@ h6 {
   color: rgb(243, 80, 42);
 }
 
+body {
+  position: relative;
+}
+
+form {
+  direction: rtl;
+  position: relative;
+  width: 300px;
+}
+form input {
+  width: 100%;
+  outline: none;
+  color: #aaaaaa;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: initial;
+  padding: 10px 13px 10px 35px;
+  border-color: rgba(255, 255, 255, 0.07);
+}
+form button {
+  color: #aaaaaa;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 40px;
+  transform: translate(0, -50%);
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 15px;
+  transition: color 0.15s;
+  -webkit-transition: color 0.15s;
+  -moz-transition: color 0.15s;
+  -ms-transition: color 0.15s;
+  -o-transition: color 0.15s;
+}
+form button:hover {
+  color: #32beeb;
+}
+
 :root {
   --wp-main-margin: 20px;
 }
@@ -124,41 +164,6 @@ h6 {
   align-items: center;
   padding: 10px 15px;
 }
-.header .main-menu form {
-  direction: rtl;
-  position: relative;
-  width: 300px;
-}
-.header .main-menu form input {
-  width: 100%;
-  outline: none;
-  color: #aaaaaa;
-  background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  line-height: initial;
-  padding: 10px 13px 10px 35px;
-  border-color: rgba(255, 255, 255, 0.07);
-}
-.header .main-menu form button {
-  color: #aaaaaa;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 40px;
-  transform: translate(0, -50%);
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  font-size: 15px;
-  transition: color 0.15s;
-  -webkit-transition: color 0.15s;
-  -moz-transition: color 0.15s;
-  -ms-transition: color 0.15s;
-  -o-transition: color 0.15s;
-}
-.header .main-menu form button:hover {
-  color: #32beeb;
-}
 .header .main-menu .logo {
   min-width: 120px;
   min-height: 120px;
@@ -178,6 +183,103 @@ h6 {
 }
 .header .main-menu a:hover {
   color: #32beeb;
+}
+
+.overlay {
+  display: none;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1001;
+  padding: 60px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transform: translate(-100%);
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  -o-transform: translate(-100%);
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+.overlay.active {
+  transform: translate(0%);
+  -webkit-transform: translate(0%);
+  -moz-transform: translate(0%);
+  -ms-transform: translate(0%);
+  -o-transform: translate(0%);
+}
+.overlay .close-overlay {
+  font-family: "tiefonticon";
+  color: #e74c3c;
+  transition: color 0.15s;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+form.search-form {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.search-field {
+  width: 73%;
+  padding: 8px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #2c2f34;
+  font-size: 13px;
+  outline: none;
+  padding: 5px;
+  line-height: 23px;
+  border-radius: 2px;
+  transition: background 0.3s, border 0.3s;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+.search-field:focus {
+  border-color: #32beeb;
+  background-color: #fff;
+}
+
+.search-field:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+input.search-submit {
+  background-color: #32beeb;
+  color: #FFFFFF;
+  width: 27%;
+  position: relative;
+  color: #fff;
+  padding: 7px 15px;
+  margin: 0;
+  margin-right: 2%;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+input.search-submit:hover {
+  background-color: #08f;
+  /* background-color: #2c2f34; */
 }
 
 .wp-content {
@@ -279,6 +381,7 @@ h6 {
   right: 50%;
   width: 55px;
   height: 55px;
+  scroll-behavior: smooth;
 }
 .wp-content .home a.go-to-content:hover::before {
   border-color: transparent #08f #08f transparent;
@@ -511,8 +614,8 @@ h6 {
 .wp-content .related-articl .related-articl-container .related-articl-item > a {
   position: relative;
 }
-.wp-content .related-articl .related-articl-container .related-articl-item > a::before {
-  content: "servess";
+.wp-content .related-articl .related-articl-container .related-articl-item > a span {
+  font-size: 13px;
   position: absolute;
   bottom: 16px;
   left: 15px;
@@ -754,25 +857,19 @@ h6 {
   display: block;
   position: relative;
 }
-.check-also-box .check-also-item a::before {
-  content: "";
+.check-also-box .check-also-item a span {
+  font-size: 13px;
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  border-radius: 50%;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-50%);
-  border: 1px solid #ccc;
+  bottom: 16px;
+  left: 15px;
+  padding: 3px 8px;
+  color: #fff;
+  background: #32beeb;
+  border-radius: 2px;
 }
 .check-also-box .check-also-item a img {
   width: 278px;
   height: 157px;
-}
-.check-also-box .check-also-item a img:hover {
-  color: #fff;
-  opacity: 0.8;
 }
 .check-also-box .check-also-item a h3 {
   font-size: 18px;

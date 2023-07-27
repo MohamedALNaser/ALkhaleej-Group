@@ -7,23 +7,13 @@ window.addEventListener("scroll", () => {
     logo.style.display = "block";
   }
 });
-
-let sevices = document.querySelectorAll(
-  ".wp-content .section .wp-section-content .services .services-content .servise-item"
-);
-
-sevices.forEach((item, index) => {
-  if (index > 5) item.style.display = "none";
-});
-
-
-// get data from json file and display it in the console
-// let jsonData;
-// fetch("./../services/services.json")
-//   .then((response) => response.json())
-//   .then((json) => {
-//     jsonData = json;
-//     console.log(jsonData);
-//   });
-
-
+document
+  .querySelector(".header .main-menu .menu-spans")
+  .addEventListener("click", () => {
+    document.querySelector(".overlay").classList.add("active");
+  });
+document
+  .querySelector(".overlay .close-overlay")
+  .addEventListener("click", () => {
+    document.querySelector(".overlay").classList.remove("active");
+  });

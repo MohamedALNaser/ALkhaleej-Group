@@ -2,9 +2,6 @@ import jsonData from "./../../services/services.json" assert { type: "json" };
 let services = jsonData.servise;
 let idNum, servData, views, link, servName, imgSrc, desc, categury;
 let padgeId = Number(getMeta("pageId"));
-const searchInput = document.querySelector("input");
-const searchButton = document.querySelector(".search-btn");
-
 function getMeta(metaName) {
   const metas = document.getElementsByTagName("meta");
   for (let i = 0; i < metas.length; i++) {
@@ -251,12 +248,7 @@ function shareButtom() {
     }
   });
 }
-searchButton.addEventListener("click", function () {
-  const searchTerm = searchInput.value.trim();
-  if (searchTerm !== "") {
-    window.location.href = "https://example.com/search?q=" + searchTerm;
-  }
-});
+
 function readAlso() {
   let itemIndex = getRandomNumbers(1);
   link = services[itemIndex].href;

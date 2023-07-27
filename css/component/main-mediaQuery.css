@@ -1,3 +1,8 @@
+@media screen and (min-width: 992px) {
+  .menu-spans {
+    display: none;
+  }
+}
 @media screen and (max-width: 991.98px) {
   .header {
     min-height: 85px;
@@ -8,9 +13,24 @@
   .header .main-menu form {
     width: 40px;
     height: 40px;
-  }
-  .header .main-menu form input {
     display: none;
+  }
+  .header .main-menu form input,
+  .header .main-menu form button {
+    display: none;
+  }
+  .header .main-menu .menu-spans {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    cursor: pointer;
+  }
+  .header .main-menu .menu-spans span {
+    margin-bottom: 3px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
   }
   .home {
     height: calc(92vh - 80px) !important;

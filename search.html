@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <meta name="Pagecategory" content="شركة جلى بلاط بالدمام">
-    <meta name="PageTag" content="جلي بالدمام">
+    <meta name="Pagecategory" content="">
     <link rel="stylesheet" href="./../css/normalize.css">
     <link rel="stylesheet" href="./../css/all.min.css">
     <link rel="stylesheet" href="./../css/component/main.css">
@@ -17,12 +16,13 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;400;500;700;800&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa:wght@200;400;500;700;800&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- end Of Fonts -->
     <script src="./../js/component/footerServise.js" type="module"></script>
-    <script src="./../js/component/categury.js" type="module"></script>
-    <script src="./../js/component/tag.js" type="module"></script>
+    <script src="./getPageContent.js" type="module"></script>
 
 </head>
 
@@ -36,18 +36,14 @@
             <div class=" header ">
                 <div class=" container ">
                     <div class=" main-menu ">
-                        <div class="menu-spans">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <form action="./../search.html" method="">
-                            <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن" autocomplete="off" value="">
+                        <form action="./search.html" method="">
+                            <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن"
+                                autocomplete="off" value="">
                             <button class="search-btn">
-                            <span>
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </button>
+                                <span>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </button>
                         </form>
                         <a href=" ./../index.html ">
                             ALkhaleej-Group | الخليج جروب
@@ -67,27 +63,12 @@
                         </ol>
                     </nav>
                     <article class="related-articl">
-
                         <h2></h2>
+                        <form role="search" method="get" class="search-form" action="./search.html">
+                            <input type="search" class="search-field" placeholder="بحث …" value="" name="searchName">
+                            <input type="submit" class="search-submit" value="بحث">
+                        </form>
                         <div class="related-articl-container">
-                            <!-- <div class="related-articl-item">
-                                    <figure>
-                                        <img src="./../images/img.jpg" alt="">
-                                    </figure>
-                                    <div class="related-articl-item-content">
-                                        <h3>
-                                            <a href="./شركة تنظيف بالدمام.html">شركة تنظيف بالدمام</a>
-                                        </h3>
-                                        <p>
-                                            <span class="servise-data">
-                                                <i class="fa fa-calendar"></i>
-                                                <span>ديسمبر 18, 2022</span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div> -->
-
-
                         </div>
                     </article>
 
@@ -101,7 +82,9 @@
                             <div class=" content ">
                                 <h4>إتصلوا بنا في أي وقت للحصول على أفضل الخدمات من خبراء التنظيف - 0566227646</h4>
                                 <h3>جداول الخليج خبراء التنظيف بالمنطقة الشرقية- 0566227646</h3>
-                                <p>لتنظيف الفل والقصور - وتنظيف المفروشات - خدمات تعقيم ومكافحة الحشرات وتنظيف المنازل بالخبر - الدمام - الظهران - القطيف - نحن متخصصون في مجال التنظيف - نمتلك طواقم مميزة ومدربة وتمتع بكفاءة غير مسبوقة - لدينا معدات وأجهزة
+                                <p>لتنظيف الفل والقصور - وتنظيف المفروشات - خدمات تعقيم ومكافحة الحشرات وتنظيف المنازل
+                                    بالخبر - الدمام - الظهران - القطيف - نحن متخصصون في مجال التنظيف - نمتلك طواقم مميزة
+                                    ومدربة وتمتع بكفاءة غير مسبوقة - لدينا معدات وأجهزة
                                     قوية متطورة - لدينا سابقة أعمال مشرفة للغاية</p>
                             </div>
                         </div>

@@ -72,42 +72,6 @@ $--main-color :variables.$main-color;
         justify-content: space-between;
         align-items: center;
         padding: 10px 15px;
-        form {
-            direction: rtl;
-            position: relative;
-            width: 300px;
-            input {
-                width: 100%;
-                outline: none;
-                color: #aaaaaa;
-                background: transparent;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                line-height: initial;
-                padding: 10px 13px 10px 35px;
-                border-color: rgba(255, 255, 255, 0.07);
-            }
-            button {
-                color: #aaaaaa;
-                position: absolute;
-                left: 0;
-                top: 50%;
-                width: 40px;
-                transform: translate(0, -50%);
-                border: none;
-                cursor: pointer;
-                background: transparent;
-                font-size: 15px;
-                transition: color 0.15s;
-                -webkit-transition: color 0.15s;
-                -moz-transition: color 0.15s;
-                -ms-transition: color 0.15s;
-                -o-transition: color 0.15s;
-                &:hover {
-                    color: $--main-color;
-                }
-                // span {}
-            }
-        }
         .logo {
             min-width: 120px;
             min-height: 120px;
@@ -129,6 +93,104 @@ $--main-color :variables.$main-color;
             }
         }
     }
+}
+
+.overlay {
+    display: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1001;
+    padding: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transform: translate(-100%);
+    -webkit-transform: translate(-100%);
+    -moz-transform: translate(-100%);
+    -ms-transform: translate(-100%);
+    -o-transform: translate(-100%);
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    &.active {
+        //display: block;
+        transform: translate(0%);
+        -webkit-transform: translate(0%);
+        -moz-transform: translate(0%);
+        -ms-transform: translate(0%);
+        -o-transform: translate(0%);
+    }
+    .close-overlay {
+        font-family: "tiefonticon";
+        color: #e74c3c;
+        transition: color 0.15s;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+form.search-form {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.search-field {
+    width: 73%;
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #2c2f34;
+    font-size: 13px;
+    outline: none;
+    padding: 5px;
+    line-height: 23px;
+    border-radius: 2px;
+    transition: background 0.3s, border 0.3s;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+.search-field:focus {
+    border-color: #32beeb;
+    background-color: #fff;
+}
+
+.search-field:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+input.search-submit {
+    background-color: #32beeb;
+    color: #FFFFFF;
+    width: 27%;
+    position: relative;
+    color: #fff;
+    padding: 7px 15px;
+    margin: 0;
+    margin-right: 2%;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+input.search-submit:hover {
+    background-color: #08f;
+    /* background-color: #2c2f34; */
 }
 
 .wp-content {
@@ -243,6 +305,7 @@ $--main-color :variables.$main-color;
             // top: 25px;
             width: 55px;
             height: 55px;
+            scroll-behavior: smooth;
             &:hover {
                 &::before {
                     border-color: transparent #08f #08f transparent;
