@@ -74,8 +74,9 @@ function createRelated() {
   let itemfigure = document.createElement("a");
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
-  img.src = `./.${imgSrc}`;
-  // serviseItem.style.order = divOrder;
+  if (typeof imgSrc == "object") {
+    img.src = `${imgSrc[0]}`;
+  } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
@@ -99,9 +100,6 @@ function createRelated() {
 
 const urlParams = new URLSearchParams(window.location.search);
 const serchItems = urlParams.get("searchName");
-// const charsAfterEqual = serchItems.substring(serchItems.indexOf("=") + 1);
-// console.log(serchItems);
-// console.log(charsAfterEqual);
 document.title = `لقد بحثت عن ${serchItems} - مجموعة الخليج`;
 document.querySelector(
   ".related-articl >h2"
@@ -113,12 +111,14 @@ document.querySelector("input.search-field").value = serchItems;
 let relatedItems = [];
 
 for (let i = 0; i < services.length; i++) {
-  servBody = services[i].body.split(" ");
+  // servBody = services[i].body.split(" ");
 
-  const allExist = serchItems
-    .split(" ")
-    .every((elem) => servBody.includes(elem));
-
+  // const allExist = serchItems
+  //   .split(" ")
+  //   .every((elem) => servBody.includes(elem));
+  const servBody = services[i].body;
+  const regexPattern = new RegExp(serchItems.split(" ").join("|"), "i");
+  const allExist = regexPattern.test(servBody);
   if (allExist && serchItems !== "") {
     servData = services[i].data;
     views = services[i].views;
