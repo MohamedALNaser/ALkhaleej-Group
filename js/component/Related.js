@@ -1,9 +1,9 @@
-function getRandomNumbers(num) {
+function getRandomNumbers(num, padgeId) {
   const numbers = [];
 
   while (numbers.length < num) {
     const randomNumber = Math.floor(Math.random() * 46);
-    if (!numbers.includes(randomNumber)) {
+    if (!numbers.includes(randomNumber) && randomNumber !== padgeId) {
       numbers.push(randomNumber);
     }
   }

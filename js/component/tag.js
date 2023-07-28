@@ -76,8 +76,13 @@ function createRelated() {
   let itemfigure = document.createElement("a");
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
-  img.src = `./.${imgSrc}`;
-  // serviseItem.style.order = divOrder;
+  if (typeof imgSrc == "object") {
+    img.src = `${imgSrc[0]}`;
+  } else img.src = `./.${imgSrc}`;
+  let spanContent = document.createElement("span");
+  spanContent.innerText = categury;
+  itemfigure.appendChild(spanContent);
+
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
   serviseItem.appendChild(serviseItemContent);
@@ -106,7 +111,17 @@ PageTagNames.forEach((ele, index) => {
       imgSrc = services[i].img;
       desc = services[i].description;
       divOrder = PageTagNames.length - 1 - index;
-      createRelated(servData, views, link, servName, imgSrc, desc, divOrder);
+      categury = services[i].categury;
+      createRelated(
+        servData,
+        views,
+        link,
+        servName,
+        imgSrc,
+        desc,
+        divOrder,
+        categury
+      );
       relatedItems.push(i);
     }
   }

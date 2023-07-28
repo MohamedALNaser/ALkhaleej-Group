@@ -56,7 +56,11 @@ function create(id, servData, views, link, servName, imgSrc, desc) {
   let serviseImg = document.createElement("div");
   serviseImg.classList.add("servise-img");
   let img = document.createElement("img");
-  img.src = imgSrc;
+  if (typeof imgSrc == "object") {
+    img.src = `${imgSrc[0]}`;
+  } else {
+    img.src = imgSrc;
+  }
 
   let serviseDesc = document.createElement("p");
   serviseDesc.classList.add("servise-desc");

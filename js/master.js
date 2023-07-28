@@ -1,12 +1,20 @@
 let logo = document.querySelector(".logo");
-logo.style.transition = " display 0.3s linear";
-window.addEventListener("scroll", () => {
+if (logo) {
+  logo.style.transition = " display 0.3s linear";
   if (window.scrollY > 50) {
     logo.style.display = "none";
   } else {
     logo.style.display = "block";
   }
-});
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      logo.style.display = "none";
+    } else {
+      logo.style.display = "block";
+    }
+  });
+}
 document
   .querySelector(".header .main-menu .menu-spans")
   .addEventListener("click", () => {

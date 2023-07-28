@@ -1,11 +1,12 @@
 @use "./component/main.scss";
-@use "./slide-show.scss";
+// @use "./slide-show.scss";
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", Arial, sans-serif;
     font-size: 16px;
 }
 
 // #32beeb
+// $--main-color :#24b0e2;
 $--main-color :#32beeb;
 .wp-content {
     .section {
@@ -16,6 +17,7 @@ $--main-color :#32beeb;
             padding: 30px;
             color: #999;
             // color: #fff;
+            max-width: 1140px;
             .services {
                 .services-head {
                     display: flex;
@@ -62,7 +64,7 @@ $--main-color :#32beeb;
                     justify-content: space-between;
                     gap: 20px 30px;
                     .servise-item {
-                        width: 350px;
+                        width: 335px;
                         margin: 5px 0;
                         display: flex;
                         flex-direction: column;

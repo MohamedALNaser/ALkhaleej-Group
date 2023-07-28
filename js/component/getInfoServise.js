@@ -27,7 +27,9 @@ function createRelated() {
 
   let itemfigure = document.createElement("figure");
   let img = document.createElement("img");
-  img.src = `./.${imgSrc}`;
+  if (typeof imgSrc == "object") {
+    img.src = `${imgSrc[0]}`;
+  } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
 
@@ -144,9 +146,9 @@ function getInfo(padgeId) {
   let pageImgs = document.querySelectorAll("figure img");
   imgSrc = services[padgeId].img;
   if (typeof imgSrc == "object") {
-    pageImgs[0].src = `./.${imgSrc[0]}`;
-    pageImgs[1].src = `./.${imgSrc[1]}`;
-    pageImgs[2].src = `./.${imgSrc[2]}`;
+    pageImgs[0].src = `${imgSrc[0]}`;
+    pageImgs[1].src = `${imgSrc[1]}`;
+    pageImgs[2].src = `${imgSrc[2]}`;
   }
   document.querySelectorAll("p > a").forEach((ele, index) => {
     for (let i = 0; i < services.length; i++) {
@@ -161,7 +163,7 @@ function getInfo(padgeId) {
   });
 }
 function relatedServises() {
-  let relatedItems = getRandomNumbers(4);
+  let relatedItems = getRandomNumbers(4, padgeId);
   servicesContent.innerHTML = "";
   for (let i = 0; i < 4; i++) {
     servData = services[relatedItems[i]].data;

@@ -72,7 +72,9 @@ function createRelated() {
   let itemfigure = document.createElement("a");
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
-  img.src = `./.${imgSrc}`;
+  if (typeof imgSrc == "object") {
+    img.src = `${imgSrc[0]}`;
+  } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
@@ -103,4 +105,22 @@ let categuryName = getMeta("Pagecategory");
 
 document.title = `${categuryName} الأرشيف - مجموعة الخليج`;
 document.querySelector(".related-articl > h2").innerHTML = categuryName;
-relatedServises(categuryName);
+function myFunction(counter) {
+  try {
+    // do something that might cause an error
+    relatedServises(categuryName);
+    console.log("Function executed");
+  } catch (error) {
+    // handle the error and call the function again
+    console.log("Error occurred: " + error.message);
+    counter++;
+    if (counter < 3) {
+      myFunction(counter);
+    } else {
+      console.log("Maximum number of attempts reached. Exiting function.");
+    }
+  }
+}
+
+// call the function with an initial counter of 0
+myFunction(0);

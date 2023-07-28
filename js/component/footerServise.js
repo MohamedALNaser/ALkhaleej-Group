@@ -62,6 +62,9 @@ document
   });
 
 function readAlso() {
+  if (document.querySelector(".check-also-box")) {
+    document.querySelector(".check-also-box").remove();
+  }
   let itemIndex = getRandomNumbers(1);
   link = services[itemIndex].href;
   let checkAlso = document.createElement("div");
