@@ -17,7 +17,7 @@ const updateServices = async (e) => {
       ".wp-content .home .entery-header .info > span span.views"
     ).textContent
   );
-  console.log(view);
+  // console.log(view);
   if (loadFlage) {
     view = view + 1;
     const doc = {

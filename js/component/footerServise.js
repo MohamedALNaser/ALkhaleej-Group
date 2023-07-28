@@ -140,7 +140,7 @@ function readAlso() {
         checkAlso.style.cssText = `
           left: 0;
           transform: translate(-100%,0%);`;
-        console.log("tags");
+        // console.log("tags");
       }
     });
   } else {
