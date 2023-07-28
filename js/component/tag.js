@@ -1,19 +1,12 @@
+import {
+  getRandomNumbers,
+  getMeta,
+  shareButtom,
+} from "./../component/Related.js";
 import jsonData from "./../../services/services.json" assert { type: "json" };
 let services = jsonData.servise;
 
 let divOrder, servData, views, link, servName, imgSrc, desc, categury;
-
-function getMeta(metaName) {
-  const metas = document.getElementsByTagName("meta");
-
-  for (let i = 0; i < metas.length; i++) {
-    if (metas[i].getAttribute("name") === metaName) {
-      return metas[i].getAttribute("content");
-    }
-  }
-
-  return "";
-}
 function createRelated() {
   // servData, link, servName, imgSrc
   let servicesContent = document.querySelector(

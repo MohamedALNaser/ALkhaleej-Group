@@ -1,9 +1,7 @@
 import jsonData from "./../../services/services.json" assert { type: "json" };
-// console.log(jsonData);
 let services = jsonData.servise;
 let id, servData, views, link, servName, imgSrc, desc;
 let i;
-
 function create(id, servData, views, link, servName, imgSrc, desc) {
   let servicesContent = document.querySelector(
     ".wp-content .section .wp-section-content .services .services-content"
@@ -78,7 +76,6 @@ function create(id, servData, views, link, servName, imgSrc, desc) {
 
   servicesContent.appendChild(serviseItem);
 }
-// i >= services.length - 6
 for (i = services.length - 1; i >= 0; i--) {
   id = services[i].id;
   servData = services[i].data;
@@ -87,14 +84,5 @@ for (i = services.length - 1; i >= 0; i--) {
   servName = services[i].name;
   imgSrc = services[i].img;
   desc = services[i].description;
-  // if (
-  //   servData !== "" &&
-  //   views !== "" &&
-  //   link !== "" &&
-  //   servName !== "" &&
-  //   imgSrc !== "" &&
-  //   desc !== ""
-  // ) {
   create(id, servData, views, link, servName, imgSrc, desc);
-  // }
 }

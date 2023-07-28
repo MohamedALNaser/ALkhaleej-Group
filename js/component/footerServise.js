@@ -1,5 +1,6 @@
+import { getRandomNumbers, getMeta } from "./../component/Related.js";
 import jsonData from "./../../services/services.json" assert { type: "json" };
-
+// console.log(jsonData);
 let services = jsonData.servise;
 let id, servData, link, servName;
 let i;
@@ -12,17 +13,7 @@ let footerLIsDate = document.querySelectorAll(
 let footerLIsName = document.querySelectorAll(
   ".footer .wp-footer-content .col ul.content li.sevice h4.sevice-name"
 );
-function getMeta(metaName) {
-  const metas = document.getElementsByTagName("meta");
 
-  for (let i = 0; i < metas.length; i++) {
-    if (metas[i].getAttribute("name") === metaName) {
-      return metas[i];
-    }
-  }
-
-  return "";
-}
 let exist = getMeta("pageId");
 footerItemLink.forEach((e, index) => {
   i = services.length - index - 1;
@@ -69,3 +60,117 @@ document
   .addEventListener("click", () => {
     document.querySelector(".overlay").classList.remove("active");
   });
+
+function readAlso() {
+  let itemIndex = getRandomNumbers(1);
+  link = services[itemIndex].href;
+  let checkAlso = document.createElement("div");
+  checkAlso.classList.add("check-also-box");
+  let checkAlsoGloblTitel = document.createElement("div");
+  checkAlsoGloblTitel.classList.add("check-also-globl-titel");
+  let checkAlsoGloblTitelH3 = document.createElement("h3");
+  checkAlsoGloblTitelH3.textContent = "شاهد أيضاً";
+  checkAlsoGloblTitel.appendChild(checkAlsoGloblTitelH3);
+  let checkAlsoRemove = document.createElement("a");
+  checkAlsoRemove.classList.add("check-also-remove");
+  checkAlsoRemove.href = "#";
+  checkAlsoRemove.textContent = "X";
+  checkAlsoGloblTitel.appendChild(checkAlsoRemove);
+  checkAlsoRemove.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAlso.classList.add("hide-check-also");
+  });
+
+  let checkAlsoItem = document.createElement("div");
+  checkAlsoItem.classList.add("check-also-item");
+  let articlLink = document.createElement("a");
+  articlLink.href = `./.${link}`;
+  let checkAlsoItemImg = document.createElement("img");
+  checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
+  let spanContent = document.createElement("span");
+  spanContent.innerText = services[itemIndex].categury;
+  articlLink.appendChild(spanContent);
+  articlLink.appendChild(checkAlsoItemImg);
+  checkAlsoItem.appendChild(articlLink);
+  let checkAlsoItemContentH3 = document.createElement("h3");
+  let servisePage = document.createElement("a");
+  servisePage.href = `./.${link}`;
+  servisePage.appendChild(checkAlsoItemContentH3);
+  checkAlsoItemContentH3.textContent = services[itemIndex].name;
+  checkAlsoItem.appendChild(servisePage);
+  checkAlso.appendChild(checkAlsoGloblTitel);
+  checkAlso.appendChild(checkAlsoItem);
+
+  document
+    .querySelector(".wp-content .wp-content-container")
+    .appendChild(checkAlso);
+  let lastPInArtical = document.querySelectorAll(
+    ".wp-content .wp-content-container article.main-content p"
+  )[
+    document.querySelectorAll(
+      ".wp-content .wp-content-container article.main-content p"
+    ).length - 1
+  ];
+  // lastPInArtical.insertAdjacentElement("afterend",checkAlso)
+  if (document.querySelector(".tags")) {
+    if (
+      document.querySelector(".tags").offsetTop <
+        window.scrollY + window.innerHeight &&
+      window.innerWidth > 991
+    ) {
+      checkAlso.style.cssText = `
+        left: 0;
+        transform: translate(0%,0%);`;
+    } else {
+      checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(-100%,0%);`;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (
+        document.querySelector(".tags").offsetTop <
+          window.scrollY + window.innerHeight &&
+        window.innerWidth > 991
+      ) {
+        checkAlso.style.cssText = `
+          left: 0;
+        transform: translate(0%,0%);`;
+      } else {
+        checkAlso.style.cssText = `
+          left: 0;
+          transform: translate(-100%,0%);`;
+        console.log("tags");
+      }
+    });
+  } else {
+    if (
+      lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
+      window.innerWidth > 991
+    ) {
+      checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(0%,0%);`;
+    } else {
+      checkAlso.style.cssText = `
+      left: 0;
+      transform: translate(-100%,0%);`;
+    }
+    //
+    window.addEventListener("scroll", () => {
+      if (
+        lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
+        window.innerWidth > 991
+      ) {
+        checkAlso.style.cssText = `
+        left: 0;
+        transform: translate(0%,0%);`;
+      } else {
+        checkAlso.style.cssText = `
+        left: 0;
+        transform: translate(-100%,0%);`;
+      }
+    });
+  }
+}
+export { readAlso };

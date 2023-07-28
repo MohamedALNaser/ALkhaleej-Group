@@ -1,21 +1,17 @@
+import {
+  getRandomNumbers,
+  getMeta,
+  shareButtom,
+} from "./../component/Related.js";
+import { readAlso } from "./footerServise.js";
 import jsonData from "./../../services/services.json" assert { type: "json" };
 let services = jsonData.servise;
 let idNum, servData, views, link, servName, imgSrc, desc, categury;
 let padgeId = Number(getMeta("pageId"));
-function getMeta(metaName) {
-  const metas = document.getElementsByTagName("meta");
-  for (let i = 0; i < metas.length; i++) {
-    if (metas[i].getAttribute("name") === metaName) {
-      return metas[i].getAttribute("content");
-    }
-  }
-
-  return "";
-}
+let servicesContent = document.querySelector(
+  ".wp-content .content .content-container .related-articl .related-articl-container"
+);
 function createRelated() {
-  let servicesContent = document.querySelector(
-    ".wp-content .content .content-container .related-articl .related-articl-container"
-  );
   let serviseItem = document.createElement("div");
   serviseItem.classList.add("related-articl-item");
   let serviseItemContent = document.createElement("div");
@@ -166,6 +162,7 @@ function getInfo(padgeId) {
 }
 function relatedServises() {
   let relatedItems = getRandomNumbers(4);
+  servicesContent.innerHTML = "";
   for (let i = 0; i < 4; i++) {
     servData = services[relatedItems[i]].data;
     views = services[relatedItems[i]].views;
@@ -173,8 +170,6 @@ function relatedServises() {
     servName = services[relatedItems[i]].name;
     categury = services[relatedItems[i]].categury.trim();
     if (servName.includes("خصم")) {
-      // console.log(servName);
-      // console.log(servName.indexOf("خصم"));
       servName = services[relatedItems[i]].name.slice(
         0,
         servName.indexOf("خصم")
@@ -185,183 +180,26 @@ function relatedServises() {
     createRelated(servData, views, link, servName, imgSrc, desc, categury);
   }
 }
-const getRandomNumbers = (num) => {
-  const numbers = [];
 
-  while (numbers.length < num) {
-    const randomNumber = Math.floor(Math.random() * 46);
-    if (!numbers.includes(randomNumber)) {
-      numbers.push(randomNumber);
-    }
-  }
-
-  return numbers;
-};
-function shareButtom() {
-  link = window.location.href;
-  link = `https://mohamedalnaser.github.io/ALkhaleej-Group/`;
-  servName = services[padgeId].name;
-  let share = [
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`,
-    `https://twitter.com/share?text=${encodeURIComponent(
-      servName.trim()
-    )}&url=${encodeURIComponent(link)}`,
-    `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-      link
-    )}&title=${encodeURIComponent(servName.trim())}
-    `,
-    `https://www.tumblr.com/share/link?url=${encodeURIComponent(
-      link
-    )}&name=${encodeURIComponent(servName.trim())}`,
-    `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
-      link
-    )}&description=${encodeURIComponent(
-      servName.trim()
-    )}&media=${encodeURIComponent(imgSrc)}`,
-    `https://reddit.com/submit?url=${encodeURIComponent(
-      link
-    )}&title=${encodeURIComponent(servName.trim())}`,
-    `https://vk.com/share.php?url=${encodeURIComponent(link)}`,
-    `mailto:?subject=Check%20out%20this%20article!&body=${encodeURIComponent(
-      link
-    )}`,
-    "#",
-  ];
-
-  let share_links = document.querySelectorAll(".share-links a");
-  share_links.forEach((link, index) => {
-    if (index == share_links.length - 1) return;
-    link.href = share[index];
-    link.target = "_blank";
-  });
-  share_links[share_links.length - 1].addEventListener("click", () => {
-    window.print();
-  });
-
-  let logoText = document.querySelector(".header .main-menu a");
-  logoText.style.transition = " display 0.3s linear";
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      logoText.style.display = "none";
+function myFunction(counter) {
+  try {
+    // do something that might cause an error
+    readAlso();
+    relatedServises();
+    getInfo(padgeId);
+    shareButtom(services, padgeId, imgSrc, servName);
+    console.log("Function executed");
+  } catch (error) {
+    // handle the error and call the function again
+    console.log("Error occurred: " + error.message);
+    counter++;
+    if (counter < 3) {
+      myFunction(counter);
     } else {
-      logoText.style.display = "block";
+      console.log("Maximum number of attempts reached. Exiting function.");
     }
-  });
-}
-
-function readAlso() {
-  let itemIndex = getRandomNumbers(1);
-  link = services[itemIndex].href;
-  let checkAlso = document.createElement("div");
-  checkAlso.classList.add("check-also-box");
-  let checkAlsoGloblTitel = document.createElement("div");
-  checkAlsoGloblTitel.classList.add("check-also-globl-titel");
-  let checkAlsoGloblTitelH3 = document.createElement("h3");
-  checkAlsoGloblTitelH3.textContent = "شاهد أيضاً";
-  checkAlsoGloblTitel.appendChild(checkAlsoGloblTitelH3);
-  let checkAlsoRemove = document.createElement("a");
-  checkAlsoRemove.classList.add("check-also-remove");
-  checkAlsoRemove.href = "#";
-  checkAlsoRemove.textContent = "X";
-  checkAlsoGloblTitel.appendChild(checkAlsoRemove);
-  checkAlsoRemove.addEventListener("click", (e) => {
-    e.preventDefault();
-    checkAlso.classList.add("hide-check-also");
-  });
-
-  let checkAlsoItem = document.createElement("div");
-  checkAlsoItem.classList.add("check-also-item");
-  let articlLink = document.createElement("a");
-  articlLink.href = `./.${link}`;
-  let checkAlsoItemImg = document.createElement("img");
-  checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
-  let spanContent = document.createElement("span");
-  spanContent.innerText = services[itemIndex].categury;
-  articlLink.appendChild(spanContent);
-  articlLink.appendChild(checkAlsoItemImg);
-  checkAlsoItem.appendChild(articlLink);
-  let checkAlsoItemContentH3 = document.createElement("h3");
-  let servisePage = document.createElement("a");
-  servisePage.href = `./.${link}`;
-  servisePage.textContent = servName;
-  servisePage.appendChild(checkAlsoItemContentH3);
-  // serviseItemContent.appendChild(checkAlsoItemContentH3);
-  checkAlsoItemContentH3.textContent = services[itemIndex].name;
-  checkAlsoItem.appendChild(servisePage);
-  checkAlso.appendChild(checkAlsoGloblTitel);
-  checkAlso.appendChild(checkAlsoItem);
-
-  document
-    .querySelector(".wp-content .wp-content-container")
-    .appendChild(checkAlso);
-  let lastPInArtical = document.querySelectorAll(
-    ".wp-content .wp-content-container article.main-content p"
-  )[
-    document.querySelectorAll(
-      ".wp-content .wp-content-container article.main-content p"
-    ).length - 1
-  ];
-  // lastPInArtical.insertAdjacentElement("afterend",checkAlso)
-  if (document.querySelector(".tags")) {
-    if (
-      document.querySelector(".tags").offsetTop <
-        window.scrollY + window.innerHeight &&
-      window.innerWidth > 991
-    ) {
-      checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(0%,0%);`;
-    } else {
-      checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(-100%,0%);`;
-    }
-    window.addEventListener("scroll", () => {
-      if (
-        document.querySelector(".tags").offsetTop <
-          window.scrollY + window.innerHeight &&
-        window.innerWidth > 991
-      ) {
-        checkAlso.style.cssText = `
-      left: 0;
-      transform: translate(0%,0%);`;
-      } else {
-        checkAlso.style.cssText = `
-      left: 0;
-      transform: translate(-100%,0%);`;
-      }
-    });
-  } else {
-    if (
-      lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
-      window.innerWidth > 991
-    ) {
-      checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(0%,0%);`;
-    } else {
-      checkAlso.style.cssText = `
-    left: 0;
-    transform: translate(-100%,0%);`;
-    }
-    window.addEventListener("scroll", () => {
-      if (
-        lastPInArtical.offsetTop < window.scrollY + window.innerHeight &&
-        window.innerWidth > 991
-      ) {
-        checkAlso.style.cssText = `
-      left: 0;
-      transform: translate(0%,0%);`;
-      } else {
-        checkAlso.style.cssText = `
-      left: 0;
-      transform: translate(-100%,0%);`;
-      }
-    });
   }
 }
 
-readAlso();
-relatedServises();
-getInfo(padgeId);
-shareButtom();
+// call the function with an initial counter of 0
+myFunction(0);
