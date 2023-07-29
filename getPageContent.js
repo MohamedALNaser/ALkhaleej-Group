@@ -16,7 +16,7 @@ function createRelated() {
   serviseItemContent.classList.add("related-articl-item-content");
 
   let servisePage = document.createElement("a");
-  servisePage.href = `./.${link}`;
+  servisePage.href = `.${link}`;
   let serviseName = document.createElement("h3");
   servisePage.textContent = servName;
 
@@ -54,7 +54,7 @@ function createRelated() {
 
   let btn = document.createElement("a");
   btn.classList.add("btn");
-  btn.href = `./.${link}`;
+  btn.href = `.${link}`;
   btn.textContent = "أكمل القراءة »";
 
   serviseDate.appendChild(spanDate);
@@ -72,11 +72,11 @@ function createRelated() {
   serviseItemContent.appendChild(btn);
 
   let itemfigure = document.createElement("a");
-  itemfigure.href = `./.${link}`;
+  itemfigure.href = `.${link}`;
   let img = document.createElement("img");
   if (typeof imgSrc == "object") {
     img.src = `${imgSrc[0]}`;
-  } else img.src = `./.${imgSrc}`;
+  } else img.src = `.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
@@ -122,7 +122,7 @@ for (let i = 0; i < services.length; i++) {
   if (allExist && serchItems !== "") {
     servData = services[i].data;
     views = services[i].views;
-    link = services[i].href;
+    link = services[i].href.substring(3);
     servName = services[i].name;
     imgSrc = services[i].img;
     desc = services[i].description;
