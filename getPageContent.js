@@ -74,9 +74,12 @@ function createRelated() {
   let itemfigure = document.createElement("a");
   itemfigure.href = `${link}`;
   let img = document.createElement("img");
+  // if (typeof imgSrc == "object") {
+  //   img.src = `${imgSrc[0].substring(3)}`;
+  // } else img.src = `${imgSrc.substring(3)}`;
   if (typeof imgSrc == "object") {
-    img.src = `${imgSrc[0].substring(3)}`;
-  } else img.src = `${imgSrc.substring(3)}`;
+    img.src = `${imgSrc[0]}`;
+  } else img.src = `${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
