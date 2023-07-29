@@ -25,6 +25,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".slider-for").slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: false,
+                asNavFor: ".slider-nav",
+                prevArrow: '<button class="slick-prev"><i class="fa-solid fa-angle-left"></i></button>',
+                nextArrow: '<button class="slick-next"><i class="fa-solid fa-angle-right"></i></button>',
+                // autoplay: true,
+                infinite: true,
+                adaptiveHeight: true,
+                autoplaySpeed: 3000,
+                speed: 1500,
+                // cssEase: "linear",
+                pauseOnHover: true,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false,
+                        fade: true,
+                        // asNavFor: '.slider-nav',
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                    },
+                },],
+
+
+            });
+            $(".slider-nav").slick({
+                slidesToShow: 3,
+                slidesToScroll: 2,
+                // autoplay: true,
+                // infinite: true,
+                adaptiveHeight: true,
+                // autoplaySpeed: 3000,
+                speed: 1500,
+                dots: false,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        // asNavFor: '.slider-for',
+                        // centerMode: true,
+                        // focusOnSelect: true
+
+                    },
+                },],
+            });
+
+            // Add animation to return to first item after reaching the end
+            // $(".slider-for").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            //     console.log(currentSlide + " " + nextSlide);
+            //     if (currentSlide === 2) {
+            //         $(this).slick("slickGoTo", 0, true);
+            //         console.log(slick.slideCount);
+            //         $(this).slick("slickSetOption", "speed", 500, true);
+            //     } else {
+            //         // $(this).slick("slickSetOption", "speed", 500, true);
+            //     }
+            // });
+            // $(".slider-nav").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            //     if (currentSlide === slick.slideCount - 1 && nextSlide === 0) {
+            //         // $(this).slick("slickGoTo", 0, true);
+            //         $(this).slick("slickSetOption", "speed", 500, true);
+            //     } else {
+            //         $(this).slick("slickSetOption", "speed", 1500, true);
+            //     }
+            // });
+        });
+    </script>
 </head>
 
 <body>
@@ -283,89 +365,10 @@
     <script src="./js/component/createServices.js" type="module"></script>
     <script src="./js/component/footerServise.js" type="module"></script>
     <script src="./js/master.js" type="module"></script>
-    <!-- <script src="./js/component/sliderServices.js" type="module"></script> -->
+    <script src="./js/component/sliderServices.js" type="module"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(document).ready(function () {
-            $(".slider-for").slick({
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                arrows: true,
-                fade: false,
-                asNavFor: ".slider-nav",
-                prevArrow: '<button class="slick-prev"><i class="fa-solid fa-angle-left"></i></button>',
-                nextArrow: '<button class="slick-next"><i class="fa-solid fa-angle-right"></i></button>',
-                // autoplay: true,
-                infinite: true,
-                adaptiveHeight: true,
-                autoplaySpeed: 3000,
-                speed: 1500,
-                // cssEase: "linear",
-                pauseOnHover: true,
-                responsive: [{
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        arrows: false,
-                        fade: true,
-                        // asNavFor: '.slider-nav',
-                        autoplay: true,
-                        autoplaySpeed: 2000,
-                    },
-                },],
 
-
-            });
-            $(".slider-nav").slick({
-                slidesToShow: 3,
-                slidesToScroll: 2,
-                // autoplay: true,
-                // infinite: true,
-                adaptiveHeight: true,
-                // autoplaySpeed: 3000,
-                speed: 1500,
-                dots: false,
-                arrows: false,
-                responsive: [{
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        // asNavFor: '.slider-for',
-                        // centerMode: true,
-                        // focusOnSelect: true
-
-                    },
-                },],
-            });
-
-            // Add animation to return to first item after reaching the end
-            // $(".slider-for").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-            //     console.log(currentSlide + " " + nextSlide);
-            //     if (currentSlide === 2) {
-            //         $(this).slick("slickGoTo", 0, true);
-            //         console.log(slick.slideCount);
-            //         $(this).slick("slickSetOption", "speed", 500, true);
-            //     } else {
-            //         // $(this).slick("slickSetOption", "speed", 500, true);
-            //     }
-            // });
-            // $(".slider-nav").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-            //     if (currentSlide === slick.slideCount - 1 && nextSlide === 0) {
-            //         // $(this).slick("slickGoTo", 0, true);
-            //         $(this).slick("slickSetOption", "speed", 500, true);
-            //     } else {
-            //         $(this).slick("slickSetOption", "speed", 1500, true);
-            //     }
-            // });
-        });
-    </script>
 </body>
 
 </html>

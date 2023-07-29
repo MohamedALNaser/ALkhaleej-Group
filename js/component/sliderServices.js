@@ -2,82 +2,49 @@ import jsonData from "./../../services/services.json" assert { type: "json" };
 // console.log(jsonData);
 let services = jsonData.servise;
 let id, servData, views, link, servName, imgSrc, desc;
-let i,
-  j = 0;
+let i;
 
-let sliderHotServise = document.querySelectorAll(
-  ".slick-slide h3.slides-hot-content"
+let sliderHotServise = document.querySelectorAll(" div.slides-hot-content");
+let sliderHotServiselinks = document.querySelectorAll(
+  ".Slide-content .thumb-overlay > a"
 );
-function create(sliderHotServiseItem, servData, link, servName, imgSrc, desc) {
-  // let sliderWarmServise = document.querySelector(
-  //   ".w.slick-initialized .slick-slide h3.slides-warm-content"
-  // );
-
-  let sliderHotServiseImg = document.querySelector(
-    " .slick-slide h3.slides-hot-content img"
-  );
-  // let sliderWarmServiseImg = document.querySelector(
-  //   ".w.slick-initialized .slick-slide h3.slides-warm-content img"
-  // );
-  sliderHotServiseImg.src = imgSrc;
-
-  let serviseLink = document.createElement("a");
-  serviseLink.classList.add("slider-hot-servise");
-  serviseLink.href = link;
-
-  let serviseDate = document.createElement("div");
-  serviseDate.classList.add("servise-date");
-  let spanDate = document.createElement("span");
-  spanDate.classList.add("hot-date");
-  let spanDataIcon = document.createElement("i");
-  spanDataIcon.classList.add("fa-sharp", "fa-regular", "fa-clock");
-  let spanDateContent = document.createElement("span");
-  spanDateContent.textContent = servData;
-
-  if (views > 500 && views < 2000) {
-    // spanviews.style.color = "#f47512";
-    // sliderWarmServise.classList.add("warm");
-  } else if (views > 2000) {
-    // spanviews.style.color = "#f3502a";
-    sliderHotServiseItem.classList.add("hot");
+let slideItemDate = document.querySelectorAll(
+  ".Slide-content .thumb-overlay .slide-item-date"
+);
+let slideItemTitle = document.querySelectorAll(
+  ".Slide-content .thumb-overlay h2.slide-item-title"
+);
+let slideItemDesc = document.querySelectorAll(
+  ".Slide-content .thumb-overlay .slide-item-desc"
+);
+const thumbOverlay = document.querySelectorAll(".thumb-overlay");
+let bgLiner = [
+  "linear-gradient(135deg, #67B26F, #4ca2cd)",
+  "linear-gradient(-135deg, #d38312, #002f4b)",
+  "linear-gradient(135deg, #7474BF, #348AC7)",
+  "linear-gradient(-135deg, #e0be00, #dc4225)",
+  "linear-gradient(135deg, #292484, #dc4225)",
+  "linear-gradient(-135deg, #e0be00, #dc4225)",
+  "linear-gradient(135deg, #5f2c82, #49a09d)",
+  "linear-gradient(-135deg, #d38312, #002f4b)",
+  "linear-gradient(135deg, #67B26F, #4ca2cd, #a7d6f7)",
+];
+for (i = 0; i < 9; i++) {
+  id = services.length - 1 - i;
+  servData = services[id].data;
+  slideItemDate[i].innerHTML = servData;
+  link = services[id].href;
+  sliderHotServiselinks[i].setAttribute("href", link);
+  imgSrc = services[id].img;
+  if (typeof imgSrc === "object") {
+    imgSrc = imgSrc[0];
+  } else {
+    imgSrc = imgSrc;
   }
-
-  serviseDate.appendChild(spanDate);
-  spanDate.appendChild(spanDataIcon);
-  spanDate.appendChild(spanDateContent);
-
-  let serviseName = document.createElement("h3");
-  serviseName.classList.add("hot-name");
-  serviseName.textContent = servName;
-
-  let serviseDesc = document.createElement("p");
-  serviseDesc.classList.add("hot-desc");
-  serviseDesc.textContent = desc;
-
-  serviseLink.appendChild(serviseDate);
-  serviseLink.appendChild(serviseName);
-  serviseLink.appendChild(serviseDesc);
-  sliderHotServiseItem.appendChild(serviseLink);
-}
-
-for (i = 0; i < services.length; i++) {
-  servData = services[i].data;
-  views = services[i].views;
-  link = services[i].href;
-  imgSrc = services[i].img;
-  servName = services[i].name;
-  desc = services[i].description;
-  if (
-    servData !== "" &&
-    // link !== "" &&
-    servName !== "" &&
-    desc !== "" &&
-    views > 2000 &&
-    j < sliderHotServise.length
-  ) {
-    create(sliderHotServise[j], servData, link, servName, imgSrc, desc);
-    j++;
-  } else if (j === sliderHotServise.length) {
-    break;
-  }
+  sliderHotServise[i].style.backgroundImage = `url(${imgSrc})`;
+  servName = services[id].name;
+  slideItemTitle[i].innerHTML = servName;
+  desc = services[id].description;
+  slideItemDesc[i].innerHTML = desc;
+  thumbOverlay[i].style.setProperty("background-image", `${bgLiner[i]}`);
 }
