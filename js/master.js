@@ -16,11 +16,6 @@ if (logo) {
   });
 }
 document
-  .querySelector(".header .main-menu .menu-spans")
-  .addEventListener("click", () => {
-    document.querySelector(".overlay").classList.add("active");
-  });
-document
   .querySelector(".overlay .close-overlay")
   .addEventListener("click", () => {
     document.querySelector(".overlay").classList.remove("active");

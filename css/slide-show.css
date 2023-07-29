@@ -132,12 +132,21 @@
 }
 
 @media screen and (max-width: 767px) {
-  .slider:nth-child(1) .thumb-overlay {
+  .slider .thumb-overlay {
     opacity: 0.9;
   }
-  .slider:nth-child(1) .slide-item-desc {
+  .slider .slide-item-desc {
     opacity: 1;
     max-height: 100px;
     margin-top: 5px;
+  }
+  .slider:nth-child(2) .slide-item-date {
+    font-size: 13px;
+  }
+  .slider:nth-child(2) .slide-item-title {
+    font-size: 14px;
+  }
+  .slider:nth-child(2) .slide-item-desc {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=slide-show.css.map */

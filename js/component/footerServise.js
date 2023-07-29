@@ -53,7 +53,7 @@ document.body.innerHTML += overlay;
 document
   .querySelector(".header .main-menu .menu-spans")
   .addEventListener("click", () => {
-    document.querySelector(".overlay").classList.add("active");
+    document.querySelector(".overlay").classList.toggle("active");
   });
 document
   .querySelector(".overlay .close-overlay")

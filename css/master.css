@@ -274,7 +274,7 @@ input.search-submit:hover {
 
 .header {
   position: relative;
-  z-index: 1000;
+  z-index: 108;
   min-height: 80px;
   background-color: #1a1a1a;
 }

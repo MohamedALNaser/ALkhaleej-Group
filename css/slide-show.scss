@@ -147,7 +147,7 @@ $--main-color :#32beeb;
 }
 
 @media screen and (max-width: 767px) {
-    .slider:nth-child(1) {
+    .slider {
         .thumb-overlay {
             opacity: 0.9;
         }
@@ -155,6 +155,17 @@ $--main-color :#32beeb;
             opacity: 1;
             max-height: 100px;
             margin-top: 5px;
+        }
+    }
+    .slider:nth-child(2) {
+        .slide-item-date {
+            font-size: 13px;
+        }
+        .slide-item-title {
+            font-size: 14px;
+        }
+        .slide-item-desc {
+            font-size: 12px;
         }
     }
 }
