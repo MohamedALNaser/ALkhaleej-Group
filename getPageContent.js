@@ -75,8 +75,8 @@ function createRelated() {
   itemfigure.href = `${link}`;
   let img = document.createElement("img");
   if (typeof imgSrc == "object") {
-    img.src = `${imgSrc[0].substring(1)}`;
-  } else img.src = `${imgSrc.substring(1)}`;
+    img.src = `${imgSrc[0].substring(3)}`;
+  } else img.src = `${imgSrc.substring(3)}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
@@ -110,6 +110,7 @@ for (let i = 0; i < services.length; i++) {
   if (allExist && serchItems !== "") {
     servData = services[i].data;
     views = services[i].views;
+    link = services[i].href;
     servName = services[i].name;
     imgSrc = services[i].img;
     desc = services[i].description;
