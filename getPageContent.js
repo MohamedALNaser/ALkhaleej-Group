@@ -16,7 +16,7 @@ function createRelated() {
   serviseItemContent.classList.add("related-articl-item-content");
 
   let servisePage = document.createElement("a");
-  servisePage.href = `.${link}`;
+  servisePage.href = `${link}`;
   let serviseName = document.createElement("h3");
   servisePage.textContent = servName;
 
@@ -54,7 +54,7 @@ function createRelated() {
 
   let btn = document.createElement("a");
   btn.classList.add("btn");
-  btn.href = `.${link}`;
+  btn.href = `${link}`;
   btn.textContent = "أكمل القراءة »";
 
   serviseDate.appendChild(spanDate);
@@ -72,31 +72,19 @@ function createRelated() {
   serviseItemContent.appendChild(btn);
 
   let itemfigure = document.createElement("a");
-  itemfigure.href = `.${link}`;
+  itemfigure.href = `${link}`;
   let img = document.createElement("img");
   if (typeof imgSrc == "object") {
     img.src = `${imgSrc[0].substring(1)}`;
-  } else img.src = `.${imgSrc.substring(1)}`;
+  } else img.src = `${imgSrc.substring(1)}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
   itemfigure.appendChild(spanContent);
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
   serviseItem.appendChild(serviseItemContent);
-
   servicesContent.appendChild(serviseItem);
 }
-
-// searchButton.addEventListener("click", (event) => {
-//   event.preventDefault();
-//   // const serchItems = document.getElementById("serchTerm").value;
-//   // if (serchItems !== "") {
-//   //   const url = `https://example.com/search?searchName=${encodeURIComponent(
-//   //     serchItems
-//   //   )}`;
-//   //   window.location.href = url;
-//   // }
-// });
 
 const urlParams = new URLSearchParams(window.location.search);
 const serchItems = urlParams.get("searchName");
