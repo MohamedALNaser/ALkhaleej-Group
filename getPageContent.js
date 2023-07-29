@@ -75,7 +75,7 @@ function createRelated() {
   itemfigure.href = `.${link}`;
   let img = document.createElement("img");
   if (typeof imgSrc == "object") {
-    img.src = `${imgSrc[0]}`;
+    img.src = `${imgSrc[0].substring(3)}`;
   } else img.src = `.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;
@@ -122,7 +122,6 @@ for (let i = 0; i < services.length; i++) {
   if (allExist && serchItems !== "") {
     servData = services[i].data;
     views = services[i].views;
-    link = services[i].href.substring(3);
     servName = services[i].name;
     imgSrc = services[i].img;
     desc = services[i].description;
