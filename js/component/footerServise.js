@@ -89,7 +89,10 @@ function readAlso() {
   let articlLink = document.createElement("a");
   articlLink.href = `./.${link}`;
   let checkAlsoItemImg = document.createElement("img");
-  checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
+  if (typeof services[itemIndex].img == "object") {
+    // img.src = `./.${imgSrc[0]}`;
+    checkAlsoItemImg.src = `./.${services[itemIndex].img[0]}`;
+  } else checkAlsoItemImg.src = `./.${services[itemIndex].img}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = services[itemIndex].categury;
   articlLink.appendChild(spanContent);
