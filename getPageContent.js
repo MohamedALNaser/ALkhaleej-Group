@@ -132,3 +132,17 @@ if (relatedItems.length === 0) {
     ".related-articl .related-articl-container"
   ).innerHTML = `المعذرة, ولكن لم يتم العثور على نتائج تطابق كلمة البحث، حاول البحث بإستخدام كلمات مختلفة .`;
 }
+
+// check images loaded or not and if not use default image
+let pageImgs = document.querySelectorAll(" img");
+pageImgs.forEach((img) => {
+  img.addEventListener("error", () => {
+    if (
+      window.location.pathname.substring(1, 5) === "page" ||
+      window.location.pathname.substring(1, 4) === "tag" ||
+      window.location.pathname.substring(1, 9) === "categury"
+    )
+      img.src = "./../images/img.jpg";
+    else img.src = "./images/img.jpg";
+  });
+});

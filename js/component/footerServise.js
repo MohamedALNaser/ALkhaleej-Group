@@ -176,4 +176,17 @@ function readAlso() {
     });
   }
 }
+// check images loaded or not and if not use default image
+let pageImgs = document.querySelectorAll(" img");
+pageImgs.forEach((img) => {
+  img.addEventListener("error", () => {
+    if (
+      window.location.pathname.substring(1, 5) === "page" ||
+      window.location.pathname.substring(1, 4) === "tag"
+    )
+      img.src = "./../images/img.jpg";
+    else img.src = "./images/img.jpg";
+  });
+});
+
 export { readAlso };
