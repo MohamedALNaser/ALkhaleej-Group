@@ -47,7 +47,7 @@ function createRelated() {
   let spanDateContent = document.createElement("span");
   spanDateContent.textContent = servData;
 
-  itemfigure.appendChild(spanContent);
+  // itemfigure.appendChild(spanContent);
   if (categury.toLowerCase() == "Uncategorized".toLowerCase()) {
     spanContent.style.display = "none";
   }
