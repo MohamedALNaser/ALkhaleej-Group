@@ -1,26 +1,31 @@
 let logo = document.querySelector(".logo");
-let logoLink = document.querySelector(".logo a");
+let logoLink = document.querySelector(".logo a.logo-link");
+let logoText = document.querySelector("a.logo-text");
 if (logo) {
   logo.style.transition = " display 0.3s linear";
   if (window.scrollY > 50) {
-    // logo.style.display = "none";
-    logo.style.visibility = "hidden";
+    logo.style.display = "none";
+    // logo.style.visibility = "hidden";
     logoLink.style.display = "none";
+    logoText.style.display = "flex";
   } else {
-    // logo.style.display = "block";
-    logo.style.visibility = "visible";
+    logo.style.display = "block";
+    // logo.style.visibility = "visible";
     logoLink.style.display = "flex";
+    logoText.style.display = "none";
   }
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-      // logo.style.display = "none";
-      logo.style.visibility = "hidden";
+      logo.style.display = "none";
+      // logo.style.visibility = "hidden";
       logoLink.style.display = "none";
+      logoText.style.display = "flex";
     } else {
-      // logo.style.display = "block";
-      logo.style.visibility = "visible";
+      logo.style.display = "block";
+      // logo.style.visibility = "visible";
       logoLink.style.display = "flex";
+      logoText.style.display = "none";
     }
   });
 }

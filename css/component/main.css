@@ -290,9 +290,6 @@ input.search-submit:hover {
   align-items: stretch;
   padding: 10px 15px;
 }
-.header .main-menu .logo {
-  min-width: 120px;
-}
 .header .main-menu .logo img {
   max-width: 120px;
   max-height: 120px;

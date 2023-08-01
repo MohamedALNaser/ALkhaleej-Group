@@ -18,6 +18,10 @@ $--main-color: #32beeb;
     color: #FFFFFF;
 }
 
+.menu-list ::selection {
+    background: none;
+}
+
 a {
     color: #000;
     text-decoration: none;

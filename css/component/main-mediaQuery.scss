@@ -139,7 +139,18 @@
     }
 }
 
+@media screen and (max-width: 430.98px) {
+    .menu-list {
+        // display: none;
+    }
+}
+
 @media screen and (max-width: 575.98px) {
+    .main-menu-item,
+    .main-menu-contact,
+    .main-menu-services {
+        display: none;
+    }
     .footer {
         padding: 20px;
     }
@@ -194,7 +205,14 @@
     .header {
         .main-menu {
             a {
-                font-size: 30px;
+                font-size: 16px;
+                max-width: 110px;
+            }
+            .logo img {
+                width: 100%;
+            }
+            .logo-text {
+                // font-size: 16px;
             }
         }
     }
@@ -217,6 +235,13 @@
         a.go-to-content {
             right: 45% !important;
         }
+    }
+    .about-us .about-us-head {
+        justify-content: center;
+    }
+    .about-us .container>div h2 {
+        font-size: 38px;
+        margin: 0 0 20px;
     }
     .content {
         .content-container {

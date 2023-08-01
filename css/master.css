@@ -20,6 +20,14 @@
   color: #FFFFFF;
 }
 
+.menu-list ::-moz-selection {
+  background: none;
+}
+
+.menu-list ::selection {
+  background: none;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -289,9 +297,6 @@ input.search-submit:hover {
   justify-content: space-between;
   align-items: stretch;
   padding: 10px 15px;
-}
-.header .main-menu .logo {
-  min-width: 120px;
 }
 .header .main-menu .logo img {
   max-width: 120px;
