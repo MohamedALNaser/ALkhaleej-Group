@@ -46,6 +46,10 @@ $--main-color :variables.$main-color;
                 // margin: 14px;
             }
         }
+        >a {
+            display: flex;
+            align-items: center;
+        }
         a,
         .menu-list span {
             color: #fff;

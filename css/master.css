@@ -287,7 +287,7 @@ input.search-submit:hover {
   background-color: #1a1a1a;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   padding: 10px 15px;
 }
 .header .main-menu .logo {
@@ -297,8 +297,12 @@ input.search-submit:hover {
   max-width: 120px;
   max-height: 120px;
 }
+.header .main-menu > a {
+  display: flex;
+  align-items: center;
+}
 .header .main-menu a,
-.header .main-menu span {
+.header .main-menu .menu-list span {
   color: #fff;
   font-size: 50px;
   font-weight: bold;
@@ -306,13 +310,15 @@ input.search-submit:hover {
   position: relative;
 }
 .header .main-menu a:hover,
-.header .main-menu span:hover {
+.header .main-menu .menu-list span:hover {
   color: #32beeb;
 }
 .header .main-menu .menu-list ul {
   display: flex;
   justify-content: space-between;
   direction: rtl;
+  height: 100%;
+  align-items: center;
 }
 .header .main-menu .menu-list ul li {
   margin: 0 10px;
@@ -327,6 +333,96 @@ input.search-submit:hover {
 .header .main-menu .menu-list ul li span:hover {
   color: #08f;
 }
+.header .main-menu .menu-list > ul > li:hover span i {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.header .main-menu .menu-list > ul > li:hover .lists {
+  display: flex;
+}
+.header .main-menu .menu-list > ul > li ul {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.header .main-menu .menu-list > ul > li span.marge {
+  position: absolute;
+  width: 100%;
+  height: 32px;
+  background-color: transparent;
+  top: -30px;
+  left: 0;
+  display: inline-block !important;
+}
+.header .main-menu .menu-list > ul > li ul.lists {
+  position: absolute;
+  top: 100%;
+  display: none;
+  flex-direction: column;
+  background: #1a1a1a;
+  border: 1px solid #2c2f34;
+  transform: translateX(5%);
+}
+.header .main-menu .menu-list > ul > li ul.lists > li {
+  direction: ltr;
+}
+.header .main-menu .menu-list > ul > li ul.lists li:hover {
+  transform: translateX(4px);
+  -webkit-transform: translateX(4px);
+  -moz-transform: translateX(4px);
+  -ms-transform: translateX(4px);
+  -o-transform: translateX(4px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:hover .servGrob {
+  display: flex !important;
+}
+.header .main-menu .menu-list > ul > li ul.lists li:hover i {
+  display: inline-block;
+}
+.header .main-menu .menu-list > ul > li ul.lists li i {
+  display: none;
+}
+.header .main-menu .menu-list > ul > li ul.lists li .servGrob {
+  background-color: #1a1a1a;
+  position: absolute;
+  top: 0;
+  left: 101%;
+  flex-direction: column;
+  display: none !important;
+}
+.header .main-menu .menu-list > ul > li ul.lists li .servGrob li a {
+  color: #fff;
+}
+.header .main-menu .menu-list > ul > li ul.lists li .servGrob li a:hover {
+  color: #08f;
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(2) .servGrob {
+  top: 0;
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(3) .servGrob {
+  top: calc(-100% - 5px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(4) .servGrob {
+  top: calc(-200% - 10px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(5) .servGrob {
+  top: calc(-300% - 15px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(6) .servGrob {
+  top: calc(-400% - 20px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li {
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 3px 4px;
+  border-bottom: 1px solid #000;
+}
+.header .main-menu .menu-list > ul > li ul.lists li:last-child {
+  border: none;
+}
+
 .wp-content {
   background-image: url(./../../images/villa-pascucci.jpg);
   background-repeat: no-repeat;
@@ -933,40 +1029,6 @@ input.search-submit:hover {
     display: none;
   }
 }
-.header .main-menu .menu-list > ul > li:hover .lists {
-  color: #008cb9;
-}
-
-.header .main-menu .menu-list ul li:hover i {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-}
-
-.lists {
-  position: absolute;
-  top: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-}
-.lists > li:hover .servGrob {
-  display: block;
-}
-
-.servGrob {
-  background-color: #fff;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  display: none;
-}
-.servGrob a {
-  color: #070606 !important;
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", Arial, sans-serif;
   font-size: 16px;

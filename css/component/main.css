@@ -297,6 +297,10 @@ input.search-submit:hover {
   max-width: 120px;
   max-height: 120px;
 }
+.header .main-menu > a {
+  display: flex;
+  align-items: center;
+}
 .header .main-menu a,
 .header .main-menu .menu-list span {
   color: #fff;
