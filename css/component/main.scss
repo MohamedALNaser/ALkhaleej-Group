@@ -183,6 +183,10 @@ $--main-color :variables.$main-color;
                 }
             }
         }
+        form {
+            display: flex;
+            align-items: center;
+        }
     }
 }
 

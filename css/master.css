@@ -427,6 +427,10 @@ input.search-submit:hover {
 .header .main-menu .menu-list > ul > li ul.lists li:last-child {
   border: none;
 }
+.header .main-menu form {
+  display: flex;
+  align-items: center;
+}
 
 .wp-content {
   background-image: url(./../../images/villa-pascucci.jpg);

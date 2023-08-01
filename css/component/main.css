@@ -20,6 +20,14 @@
   color: #FFFFFF;
 }
 
+.menu-list ::-moz-selection {
+  background: none;
+}
+
+.menu-list ::selection {
+  background: none;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -418,6 +426,10 @@ input.search-submit:hover {
 }
 .header .main-menu .menu-list > ul > li ul.lists li:last-child {
   border: none;
+}
+.header .main-menu form {
+  display: flex;
+  align-items: center;
 }
 
 .wp-content {
