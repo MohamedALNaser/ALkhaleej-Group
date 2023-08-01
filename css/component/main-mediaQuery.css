@@ -2,6 +2,9 @@
   .menu-spans {
     display: none;
   }
+  .wp-content .section .wp-section-content .services .services-content .servise-item {
+    width: calc((100% - 60px) / 3) !important;
+  }
 }
 @media screen and (max-width: 991.98px) {
   .header {
@@ -9,6 +12,7 @@
   }
   .header .main-menu {
     padding: 15px;
+    min-height: 87.5px;
   }
   .header .main-menu form {
     width: 40px;
@@ -22,7 +26,7 @@
   .header .main-menu .menu-spans {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     width: 20px;
     cursor: pointer;
   }
@@ -110,6 +114,9 @@
   }
 }
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .header .main-menu > a {
+    font-size: 30px;
+  }
   .footer {
     padding: 30px;
   }
@@ -200,6 +207,11 @@
     font-size: 23px;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .wp-content .section .wp-section-content .services .services-content .servise-item {
+    width: calc((100% - 60px) / 2) !important;
+  }
+}
 @media (max-width: 991px) {
   .wp-content .home .entery-header > p {
     font-size: 18px;
@@ -252,5 +264,12 @@
   .wp-content .home .container {
     height: auto !important;
     margin-top: 15px;
+  }
+  .wp-content .section .wp-section-content .services .services-content .servise-item {
+    width: 100%;
+  }
+  .wp-content .section .wp-section-content .services .services-content .servise-item .servise-date,
+  .wp-content .section .wp-section-content .services .services-content .servise-item .item {
+    justify-content: flex-start;
   }
 }/*# sourceMappingURL=main-mediaQuery.css.map */

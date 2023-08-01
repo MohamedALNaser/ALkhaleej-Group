@@ -292,23 +292,41 @@ input.search-submit:hover {
 }
 .header .main-menu .logo {
   min-width: 120px;
-  min-height: 120px;
 }
 .header .main-menu .logo img {
   max-width: 120px;
   max-height: 120px;
 }
-.header .main-menu a {
+.header .main-menu a,
+.header .main-menu span {
   color: #fff;
   font-size: 50px;
   font-weight: bold;
   font-family: "Changa", "sans-serif";
   position: relative;
 }
-.header .main-menu a:hover {
+.header .main-menu a:hover,
+.header .main-menu span:hover {
   color: #32beeb;
 }
-
+.header .main-menu .menu-list ul {
+  display: flex;
+  justify-content: space-between;
+  direction: rtl;
+}
+.header .main-menu .menu-list ul li {
+  margin: 0 10px;
+}
+.header .main-menu .menu-list ul li a,
+.header .main-menu .menu-list ul li span {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: normal;
+}
+.header .main-menu .menu-list ul li a:hover,
+.header .main-menu .menu-list ul li span:hover {
+  color: #08f;
+}
 .wp-content {
   background-image: url(./../../images/villa-pascucci.jpg);
   background-repeat: no-repeat;
@@ -915,6 +933,40 @@ input.search-submit:hover {
     display: none;
   }
 }
+.header .main-menu .menu-list > ul > li:hover .lists {
+  color: #008cb9;
+}
+
+.header .main-menu .menu-list ul li:hover i {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+
+.lists {
+  position: absolute;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.lists > li:hover .servGrob {
+  display: block;
+}
+
+.servGrob {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+}
+.servGrob a {
+  color: #070606 !important;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", "Open Sans", Arial, sans-serif;
   font-size: 16px;
@@ -1034,19 +1086,33 @@ body {
 .about-us {
   background-color: #1f2024;
   color: #fff;
-  direction: rtl;
   max-width: 1140px;
   margin: 0 auto;
+  padding: 30px;
 }
-.about-us .container {
+.about-us .about-us-head {
   display: flex;
   justify-content: flex-end;
+  margin: 10px 0 30px;
+  position: relative;
+}
+.about-us .about-us-head::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  bottom: -15px;
+  left: 0;
+}
+.about-us .container {
+  direction: rtl;
+  display: flex;
   align-items: center;
-  padding: 20px;
 }
 .about-us .container > div {
   width: 50%;
-  padding: 20px;
+  padding: 20px 0;
 }
 .about-us .container > div h2 {
   font-size: 42px;

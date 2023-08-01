@@ -5,13 +5,18 @@
     .menu-spans {
         display: none;
     }
+    .wp-content .section .wp-section-content .services .services-content .servise-item {
+        width: calc((100% - 60px) / 3) !important;
+    }
 }
 
 @media screen and (max-width:991.98px) {
     .header {
         min-height: 85px;
+        // height: 87.5px;
         .main-menu {
             padding: 15px;
+            min-height: 87.5px; //this value is the height of  (.header .container .main-menu) in width > 992px
             form {
                 width: 40px;
                 height: 40px;
@@ -25,7 +30,8 @@
             .menu-spans {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                // justify-content: space-between;
+                justify-content: center;
                 // height: 100%;
                 width: $menu-spans;
                 // height: $menu-spans;
@@ -150,6 +156,13 @@
 }
 
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .header {
+        .main-menu {
+            >a {
+                font-size: 30px;
+            }
+        }
+    }
     .footer {
         padding: 30px;
         .wp-footer-content {
@@ -179,11 +192,9 @@
 // Small devices (landscape phones, 576px and up)
 @media screen and (min-width: 320px) and (max-width: 575.98px) {
     .header {
-        .container {}
         .main-menu {
             a {
                 font-size: 30px;
-                &:hover {}
             }
         }
     }
@@ -281,6 +292,12 @@
     }
 }
 
+@media screen and (min-width:768px) and (max-width:992px) {
+    .wp-content .section .wp-section-content .services .services-content .servise-item {
+        width: calc((100% - 60px) / 2) !important;
+    }
+}
+
 @media (max-width: 991px) {
     .wp-content .home .entery-header>p {
         font-size: 18px;
@@ -337,5 +354,12 @@
     }
     nav.breadcrumb {
         // padding: 15px 0 0;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item {
+        width: 100%;
+        .servise-date,
+        .item {
+            justify-content: flex-start;
+        }
     }
 }

@@ -142,7 +142,7 @@ function getInfo(padgeId) {
     ".wp-content .content .content-container article.main-content .entery-content figure.attchement-img figcaption"
   )[1].innerHTML = servName;
 
-  document.querySelector(".header .main-menu a").innerHTML = "مجموعة الخليج";
+  // document.querySelector(".header .main-menu >a").innerHTML = "مجموعة الخليج";
   let pageImgs = document.querySelectorAll("figure img");
   imgSrc = services[padgeId].img;
   if (typeof imgSrc == "object") {
@@ -182,7 +182,23 @@ function relatedServises() {
     createRelated(servData, views, link, servName, imgSrc, desc, categury);
   }
 }
-
+let GotoContent = document.querySelector(".wp-content .home a.go-to-content");
+if (GotoContent) {
+  GotoContent.addEventListener("click", (e) => {
+    let target = e.target.getAttribute("href");
+    if (target.charAt(0) === "#") {
+      e.preventDefault();
+      let targetSection = document.querySelector(target);
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+        speed: 1500,
+      });
+    }
+  });
+}
 function myFunction(counter) {
   try {
     // do something that might cause an error
