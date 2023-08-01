@@ -433,7 +433,7 @@ input.search-submit:hover {
 }
 
 .wp-content {
-  background-image: url(./../images/villa-pascucci.jpg);
+  background-image: url(./../../images/villa-pascucci.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -1043,6 +1043,9 @@ body {
   font-size: 16px;
 }
 
+.wp-content {
+  background-image: url(./../images/villa-pascucci.jpg);
+}
 .wp-content .section .wp-section-content {
   margin-bottom: 50px;
   margin-top: 50px;
