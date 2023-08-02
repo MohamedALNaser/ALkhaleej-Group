@@ -33,7 +33,7 @@ let overlay = `
         <div class="close-overlay">
             x
         </div>
-        <form action="./../search.html" method="">
+        <form action="./../search" method="">
             <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن"
                 autocomplete="off" value="">
             <button class="search-btn">
