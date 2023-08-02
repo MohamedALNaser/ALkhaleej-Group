@@ -179,6 +179,47 @@ function readAlso() {
     });
   }
 }
+let serGropArray = [
+  "مكافحة حشرات",
+  "قصور ",
+  "خزانات",
+  "مكيفات",
+  "مسابح",
+  "جلي بلاط",
+  // "تنظيف",
+  "تعقيم",
+];
+let lists = document.querySelector(
+  ".header .main-menu .menu-list > ul > li ul.lists"
+);
+function createElementNavLinks(elementName, link) {
+  serGropArray.forEach((e) => {
+    let listsLis = document.createElement("li");
+    // listsLis.classList.add("ser-grop");
+    listsLis.textContent = e;
+    lists.appendChild(listsLis);
+    let servGrob = document.createElement("ul");
+    servGrob.classList.add("servGrob");
+    listsLis.appendChild(servGrob);
+    for (let i = 0; i < services.length; i++) {
+      if (services[i].name.includes(e)) {
+        let servGrobLi = document.createElement("li");
+        servGrobLi.classList.add("servGrobLi");
+        let servGrobLiLink = document.createElement("a");
+        servGrobLiLink.href = `./.${services[i].href}`;
+        servGrobLiLink.textContent = services[i].name;
+        servGrobLi.appendChild(servGrobLiLink);
+        servGrob.appendChild(servGrobLi);
+      }
+      // let spanMarge = document.createElement("span");
+      // spanMarge.classList.add("marge");
+      // servGrob.appendChild(spanMarge);
+    }
+  });
+}
+createElementNavLinks();
+// for (let i = 0; i < services.length; i++) {
+// }
 // check images loaded or not and if not use default image
 let pageImgs = document.querySelectorAll(" img");
 pageImgs.forEach((img) => {

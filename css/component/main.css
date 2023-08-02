@@ -305,6 +305,7 @@ input.search-submit:hover {
 .header .main-menu > a {
   display: flex;
   align-items: center;
+  text-align: right;
 }
 .header .main-menu a,
 .header .main-menu .menu-list span {
@@ -345,6 +346,13 @@ input.search-submit:hover {
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
 }
+.header .main-menu .menu-list > ul > li {
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
 .header .main-menu .menu-list > ul > li:hover .lists {
   display: flex;
 }
@@ -372,13 +380,18 @@ input.search-submit:hover {
 }
 .header .main-menu .menu-list > ul > li ul.lists > li {
   direction: ltr;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
-.header .main-menu .menu-list > ul > li ul.lists li:hover {
-  transform: translateX(4px);
-  -webkit-transform: translateX(4px);
-  -moz-transform: translateX(4px);
-  -ms-transform: translateX(4px);
-  -o-transform: translateX(4px);
+.header .main-menu .menu-list > ul > li ul.lists > li:hover {
+  transform: translateX(-4px);
+  -webkit-transform: translateX(-4px);
+  -moz-transform: translateX(-4px);
+  -ms-transform: translateX(-4px);
+  -o-transform: translateX(-4px);
 }
 .header .main-menu .menu-list > ul > li ul.lists li:hover .servGrob {
   display: flex !important;
@@ -404,7 +417,7 @@ input.search-submit:hover {
   color: #08f;
 }
 .header .main-menu .menu-list > ul > li ul.lists li:nth-child(2) .servGrob {
-  top: 0;
+  top: -5px;
 }
 .header .main-menu .menu-list > ul > li ul.lists li:nth-child(3) .servGrob {
   top: calc(-100% - 5px);
@@ -418,14 +431,38 @@ input.search-submit:hover {
 .header .main-menu .menu-list > ul > li ul.lists li:nth-child(6) .servGrob {
   top: calc(-400% - 20px);
 }
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(7) .servGrob {
+  top: calc(-500% - 25px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(8) .servGrob {
+  top: calc(-600% - 30px);
+}
+.header .main-menu .menu-list > ul > li ul.lists li:nth-child(9) .servGrob {
+  top: calc(-700% - 35px);
+}
 .header .main-menu .menu-list > ul > li ul.lists li {
   color: #fff;
   padding: 5px 10px;
   margin: 0 3px 4px;
-  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-right: 5px;
+}
+.header .main-menu .menu-list > ul > li ul.lists li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #2c2f34;
+  bottom: 0;
+  left: 0;
 }
 .header .main-menu .menu-list > ul > li ul.lists li:last-child {
-  border: none;
+  background-color: transparent !important;
+}
+.header .main-menu .menu-list > ul > li ul.lists li ul.servGrob {
+  width: 200px;
+  margin-left: 1px;
+  min-height: 233px;
 }
 .header .main-menu form {
   display: flex;
@@ -846,7 +883,6 @@ input.search-submit:hover {
 .footer .wp-footer-content .col {
   width: 33.3333333333%;
   max-width: 370px;
-  height: 400px;
   padding: 15px 0;
 }
 .footer .wp-footer-content .col > h3 {

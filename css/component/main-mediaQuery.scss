@@ -135,27 +135,37 @@
     .footer {
         .wp-footer-content {
             flex-direction: column;
+            align-items: center;
         }
     }
 }
 
-@media screen and (max-width: 430.98px) {
-    .menu-list {
-        // display: none;
+@media screen and (max-width: 375.98px) {
+    .header .main-menu .menu-list ul li span {
+        i {
+            display: none;
+        }
+    }
+    .header .main-menu a {
+        max-width: 90px;
+    }
+    .header .main-menu a,
+    .header .main-menu .menu-list ul li a,
+    .header .main-menu .menu-list ul li span {
+        font-size: 15px;
     }
 }
 
 @media screen and (max-width: 575.98px) {
     .main-menu-item,
-    .main-menu-contact,
-    .main-menu-services {
+    .main-menu-contact {
         display: none;
     }
     .footer {
         padding: 20px;
     }
-    .footer .wp-footer-content .col {
-        margin-bottom: 100px;
+    .footer .wp-footer-content .col:last-child {
+        margin-bottom: 40px;
     }
     .float {
         width: 50px;
@@ -386,5 +396,50 @@
         .item {
             justify-content: flex-start;
         }
+    }
+}
+
+@media screen and (max-width:320px) {
+    .header .main-menu .logo img {
+        max-width: 76px;
+    }
+    .header .main-menu a {
+        font-size: 16px;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item .item img {
+        max-width: 200px;
+    }
+    .about-us-head,
+    .our-element-head,
+    .wp-content .section .wp-section-content .services .services-head {
+        h2 {
+            font-size: 20px;
+        }
+    }
+    .header .main-menu .menu-list ul li span {
+        i {
+            display: none;
+        }
+    }
+    .content .content-container article.main-content .entery-content .share-buttons .share-links {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wp-content .related-articl .related-articl-container {
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wp-content .related-articl .related-articl-container .related-articl-item {
+        max-width: 100% !important;
+    }
+    .wp-content .related-articl h2 {
+        text-align: center;
+    }
+    .header .main-menu a {
+        text-align: right;
     }
 }

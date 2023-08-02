@@ -137,27 +137,30 @@ $--main-color :#32beeb;
     }
 }
 
+.about-us-head,
+.our-element-head {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 30px;
+    position: relative;
+    color: #fff;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.1);
+        bottom: -15px;
+        left: 0;
+    }
+}
+
 .about-us {
     background-color: #1f2024;
     color: #fff;
     max-width: 1140px;
     margin: 0 auto;
     padding: 30px;
-    .about-us-head {
-        display: flex;
-        justify-content: flex-end;
-        margin: 10px 0 30px;
-        position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background-color: rgba(255, 255, 255, 0.1);
-            bottom: -15px;
-            left: 0;
-        }
-    }
     .container {
         direction: rtl;
         display: flex;
@@ -198,6 +201,49 @@ $--main-color :#32beeb;
     }
 }
 
+.our-element {
+    max-width: 1140px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #1f2024;
+    .our-element-head {
+        h3 {}
+    }
+    .container {
+        ul {
+            direction: rtl;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li {
+                text-align: right;
+                max-width: 240px;
+                // text-align: right;
+                width: 100%;
+                margin: 15px 0;
+                color: #fff;
+                padding-bottom: 8px;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100px;
+                    height: 3px;
+                    // background-color: rgba(255, 255, 255, 0.1);
+                    background-color: #24b0e2;
+                    bottom: -5px;
+                    right: 0;
+                }
+                a {
+                    &:hover {
+                        color: #08f;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .about-us {
         .container {
@@ -211,10 +257,80 @@ $--main-color :#32beeb;
             margin: 0 0 20px;
         }
     }
+    .wp-content .section .wp-section-content .services .services-content .servise-item .item img {
+        max-width: 180px;
+        max-height: 110px;
+    }
 }
 
-@media screen and (max-width: 480px) {
-    .about-us {
+@media screen and (min-width:576px) and (max-width: 767.98px) {
+    .wp-content .section .wp-section-content .services .services-content .servise-item p.servise-desc {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .wp-content .section .wp-section-content .services .services-content .servise-item .item {
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item a h3.servise-name {
         text-align: center;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item .servise-date {
+        justify-content: center !important;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item p.servise-desc {
+        text-align: center;
+        max-width: 300px;
+    }
+    .wp-content .section .wp-section-content .services .services-content .servise-item .item img {
+        max-width: 300px;
+        max-height: 185px;
+    }
+    .about-us .container>div h2 {
+        font-size: 30px;
+    }
+    .about-us-head,
+    .our-element-head {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:320px) {
+    li.main-menu-whous {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 539.99px) {
+    .our-element .container ul li {
+        max-width: 190px;
+        font-size: 13px;
+    }
+    .our-element .container ul {
+        justify-content: flex-start;
+    }
+    .about-us,
+    .our-element {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:439.98px) {
+    .our-element .container ul {
+        justify-content: center;
+    }
+    .our-element .container ul li {
+        max-width: 240px;
+        font-size: 16px;
+    }
+    .our-element .container ul li {
+        text-align: center;
+    }
+    .our-element .container ul li::after {
+        right: 50%;
+        transform: translateX(50%);
     }
 }

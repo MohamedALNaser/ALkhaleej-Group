@@ -80,6 +80,13 @@ function create(id, servData, views, link, servName, imgSrc, desc) {
 
   servicesContent.appendChild(serviseItem);
 }
+function createElement(elementName, link) {
+  let elementDiv = document.querySelector(".our-element .container ul");
+  let elementLi = document.createElement("li");
+  elementLi.classList.add("element-item");
+  elementLi.textContent = elementName;
+  elementDiv.appendChild(elementLi);
+}
 for (i = services.length - 1; i >= 0; i--) {
   id = services[i].id;
   servData = services[i].data;
@@ -89,4 +96,5 @@ for (i = services.length - 1; i >= 0; i--) {
   imgSrc = services[i].img;
   desc = services[i].description;
   create(id, servData, views, link, servName, imgSrc, desc);
+  createElement(servName, link);
 }
