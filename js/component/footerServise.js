@@ -189,48 +189,89 @@ let serGropArray = [
   // "تنظيف",
   "تعقيم",
 ];
+document.querySelector(".wp-footer-content").id = "about-us";
 let lists = document.querySelector(
   ".header .main-menu .menu-list > ul > li ul.lists"
 );
-function createElementNavLinks(elementName, link) {
-  serGropArray.forEach((e) => {
-    let listsLis = document.createElement("li");
-    // listsLis.classList.add("ser-grop");
-    listsLis.textContent = e;
-    lists.appendChild(listsLis);
-    let servGrob = document.createElement("ul");
-    servGrob.classList.add("servGrob");
-    listsLis.appendChild(servGrob);
-    for (let i = 0; i < services.length; i++) {
-      if (services[i].name.includes(e)) {
-        let servGrobLi = document.createElement("li");
-        servGrobLi.classList.add("servGrobLi");
-        let servGrobLiLink = document.createElement("a");
-        servGrobLiLink.href = `./.${services[i].href}`;
-        servGrobLiLink.textContent = services[i].name;
-        servGrobLi.appendChild(servGrobLiLink);
-        servGrob.appendChild(servGrobLi);
+window.onload = () => {
+  let menuList = document.querySelectorAll(".menu-list li a");
+  menuList.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      let target = e.target.getAttribute("href");
+      if (target.charAt(0) === "#") {
+        e.preventDefault();
+        let targetSection = document.querySelector(target);
+        // console.log(targetSection);
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+          speed: 1500,
+        });
+        // window.scrollTo({
+        //   top: targetSection.offsetTop,
+
+        // });
       }
-      // let spanMarge = document.createElement("span");
-      // spanMarge.classList.add("marge");
-      // servGrob.appendChild(spanMarge);
-    }
+    });
   });
+};
+function createElementNavLinks(elementName, link) {
+  if (lists) {
+    serGropArray.forEach((e) => {
+      let listsLis = document.createElement("li");
+      // listsLis.classList.add("ser-grop");
+      listsLis.textContent = e;
+      lists.appendChild(listsLis);
+      let servGrob = document.createElement("ul");
+      servGrob.classList.add("servGrob");
+      listsLis.appendChild(servGrob);
+      for (let i = 0; i < services.length; i++) {
+        if (services[i].name.includes(e)) {
+          let servGrobLi = document.createElement("li");
+          servGrobLi.classList.add("servGrobLi");
+          let servGrobLiLink = document.createElement("a");
+          servGrobLiLink.href = `./.${services[i].href}`;
+          servGrobLiLink.textContent = services[i].name;
+          servGrobLi.appendChild(servGrobLiLink);
+          servGrob.appendChild(servGrobLi);
+        }
+      }
+    });
+  }
 }
-createElementNavLinks();
-// for (let i = 0; i < services.length; i++) {
-// }
+
+function myFunction(counter) {
+  try {
+    // do something that might cause an error
+    createElementNavLinks();
+    // console.log("Function executed");
+  } catch (error) {
+    // handle the error and call the function again
+    console.log("Error occurred: " + error.message);
+    counter++;
+    if (counter < 3) {
+      myFunction(counter);
+    } else {
+      console.log("Maximum number of attempts reached. Exiting function.");
+    }
+  }
+}
+
+// call the function with an initial counter of 0
+myFunction(0);
+
 // check images loaded or not and if not use default image
-let pageImgs = document.querySelectorAll(" img");
-pageImgs.forEach((img) => {
-  img.addEventListener("error", () => {
-    if (
-      window.location.pathname.substring(1, 5) === "page" ||
-      window.location.pathname.substring(1, 4) === "tag"
-    )
-      img.src = "./../images/img.jpg";
-    else img.src = "./images/img.jpg";
-  });
-});
+// let pageImgs = document.querySelectorAll(" img");
+// pageImgs.forEach((img) => {
+//   img.addEventListener("error", () => {
+//     if (
+//       window.location.pathname.substring(1, 5) === "page" ||
+//       window.location.pathname.substring(1, 4) === "tag"
+//     )
+//       img.src = "./../images/img.jpg";
+//     else img.src = "./images/img.jpg";
+//   });
+// });
 
 export { readAlso };

@@ -77,7 +77,7 @@ function createRelated() {
   itemfigure.href = `./.${link}`;
   let img = document.createElement("img");
   if (typeof imgSrc == "object") {
-    img.src = `${imgSrc[0]}`;
+    img.src = `./.${imgSrc[0]}`;
   } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
   spanContent.innerText = categury;

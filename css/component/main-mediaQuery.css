@@ -98,6 +98,12 @@
     flex-direction: column;
     align-items: center;
   }
+  .footer .wp-footer-content .col:last-child {
+    display: none;
+  }
+  .footer .wp-footer-content .col:first-child {
+    margin-bottom: 30px;
+  }
 }
 @media screen and (max-width: 375.98px) {
   .header .main-menu .menu-list ul li span i {
