@@ -189,7 +189,6 @@ let serGropArray = [
   // "تنظيف",
   "تعقيم",
 ];
-document.querySelector(".wp-footer-content").id = "about-us";
 let lists = document.querySelector(
   ".header .main-menu .menu-list > ul > li ul.lists"
 );
