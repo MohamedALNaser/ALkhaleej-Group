@@ -104,6 +104,9 @@ function relatedServises(categuryName) {
 let categuryName = getMeta("Pagecategory");
 
 document.title = `${categuryName.split("-").join(" ")} الأرشيف - مجموعة الخليج`;
+document.querySelector(
+  ".wp-content .breadcrumb .breadcrumb-item:nth-child(2)"
+).innerHTML = categuryName.split("-").join(" ");
 document.querySelector(".related-articl > h2").innerHTML = categuryName
   .split("-")
   .join(" ");
@@ -111,7 +114,7 @@ function myFunction(counter) {
   try {
     // do something that might cause an error
     relatedServises(categuryName);
-    console.log("Function executed");
+    // console.log("Function executed");
   } catch (error) {
     // handle the error and call the function again
     console.log("Error occurred: " + error.message);

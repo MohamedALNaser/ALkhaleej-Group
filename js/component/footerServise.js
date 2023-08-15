@@ -244,7 +244,7 @@ function myFunction(counter) {
   try {
     // do something that might cause an error
     createElementNavLinks();
-    // console.log("Function executed");
+    // // console.log("Function executed");
   } catch (error) {
     // handle the error and call the function again
     console.log("Error occurred: " + error.message);

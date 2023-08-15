@@ -206,7 +206,7 @@ function myFunction(counter) {
     relatedServises();
     getInfo(padgeId);
     shareButtom(services, padgeId, imgSrc, servName);
-    console.log("Function executed");
+    // console.log("Function executed");
   } catch (error) {
     // handle the error and call the function again
     console.log("Error occurred: " + error.message);
