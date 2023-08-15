@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة تنظيف فلل بالخبر</title>
-    <meta name="Pagecategory" content="شركة تنظيف فلل بالخبر">
-    <meta name="PageTag" content="تنظيف بالخبر 0566227646 , قصور بالخبر">
+    <title>شركة تنظيف كنب بالخبر</title>
+    <meta name="Pagecategory" content="شركة تنظيف كنب بالخبر">
+    <meta name="PageTag" content="بالخبر">
     <link rel="stylesheet" href="./../css/normalize.css">
     <link rel="stylesheet" href="./../css/all.min.css">
     <link rel="stylesheet" href="./../css/component/main.css">
@@ -17,19 +17,19 @@
     <meta name="keywords" content=" ">
     <meta name="author" content="مجموعة الخليج">
     <meta name="description" content="مجموعة الخليج لتنظيف الفلل والمنازل - وتنظيف المفروشات بالبخار - وتنظيف وتعقيم ومكافحة الحشرات بالظهران - الدمام - الخبر - القطيف - بأسعار مميزة للجميع">
-    <meta property="og:title" content="شركة تنظيف فلل بالخبر">
+    <meta property="og:title" content="شركة تنظيف كنب بالخبر">
     <meta property="og:description" content="مجموعة الخليج لتنظيف الفلل والمنازل - وتنظيف المفروشات بالبخار - وتنظيف وتعقيم ومكافحة الحشرات بالظهران - الدمام - الخبر - القطيف - بأسعار مميزة للجميع">
     <meta property="og:image" content="https://alkhalej-group.com/images/company.jpg">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
-    <meta property="og:url" content="./../tag">
+    <meta property="og:url" content="./../tag/شركة-تنظيف-كنب-بالخبر">
     <meta property="og:site_name" content="مجموعة الخليج">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="مجموعة الخليج">
-    <link rel="canonical" href="./../tag">
+    <link rel="canonical" href="./../tag/شركة-تنظيف-كنب-بالخبر">
     <link rel='dns-prefetch' href='//fonts.googleapis.com'>
     <!-- End SEO meta -->
 
@@ -39,7 +39,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;400;500;700;800&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
 
     <!-- end Of Fonts -->
-
+    <script src="./../js/component/footerServise.js" type="module"></script>
     <script src="./../js/component/categury.js" type="module"></script>
     <script src="./../js/component/tag.js" type="module"></script>
 
@@ -63,10 +63,10 @@
                         <form action="./../search" method="">
                             <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن" autocomplete="off" value="">
                             <button class="search-btn">
-                                <span>
-                                    <i class="fa fa-search"></i>
-                                </span>
-                            </button>
+                            <span>
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </button>
                         </form>
                         <div class="menu-list">
                             <ul>
@@ -96,7 +96,7 @@
                             <li class="breadcrumb-item">
                                 <a href="https://alkhalej-group.com/"> <i class="fa fa-home" style="margin: 0 5px;"></i>الرئيسية</a>
                             </li>
-                            <li class="breadcrumb-item category">شركة تنظيف فلل بالخبر</li>
+                            <li class="breadcrumb-item category"></li>
                         </ol>
                     </nav>
                     <article class="related-articl">
@@ -125,28 +125,28 @@
                             <h3>Our Services</h3>
                             <ul class=" content ">
                                 <a href=" " id=" ">
-                                    <li class=" sevice "><span class=" sevice-data ">ديسمبر 18, 2022</span>
-                                        <h4 class=" sevice-name ">شركة مكافحة حشرات بالدمام</h4>
+                                    <li class=" sevice "><span class=" sevice-data "></span>
+                                        <h4 class=" sevice-name "></h4>
                                     </li>
                                 </a>
                                 <a href=" " id=" ">
-                                    <li class=" sevice "><span class=" sevice-data ">نوفمبر 16, 2022</span>
-                                        <h4 class=" sevice-name ">شركة تنظيف قصور بالدمام</h4>
+                                    <li class=" sevice "><span class=" sevice-data "></span>
+                                        <h4 class=" sevice-name "></h4>
                                     </li>
                                 </a>
                                 <a href=" " id=" ">
-                                    <li class=" sevice "><span class=" sevice-data ">نوفمبر 16, 2022</span>
-                                        <h4 class=" sevice-name ">شركة تنظيف قصور بالخبر</h4>
+                                    <li class=" sevice "><span class=" sevice-data "></span>
+                                        <h4 class=" sevice-name "></h4>
                                     </li>
                                 </a>
                                 <a href=" " id=" ">
-                                    <li class=" sevice "><span class=" sevice-data ">نوفمبر 16, 2022</span>
-                                        <h4 class=" sevice-name ">شركة تنظيف قصور بالظهران</h4>
+                                    <li class=" sevice "><span class=" sevice-data "></span>
+                                        <h4 class=" sevice-name "></h4>
                                     </li>
                                 </a>
                                 <a href=" " id=" ">
-                                    <li class=" sevice "><span class=" sevice-data ">نوفمبر 16, 2022</span>
-                                        <h4 class=" sevice-name ">شركة تنظيف خزانات بالقطيف</h4>
+                                    <li class=" sevice "><span class=" sevice-data "></span>
+                                        <h4 class=" sevice-name "></h4>
                                     </li>
                                 </a>
                             </ul>
