@@ -31,7 +31,7 @@ function createRelated() {
     img.src = `./.${imgSrc[0]}`;
   } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
-  spanContent.innerText = categury;
+  spanContent.innerText = categury.split("-").join(" ");
 
   let articlLink = document.createElement("a");
   articlLink.href = `./.${link}`;
@@ -79,7 +79,7 @@ function getInfo(padgeId) {
 
   document.querySelector(
     ".wp-content .home .breadcrumb .breadcrumb-item:nth-child(2) a"
-  ).innerHTML = categury;
+  ).innerHTML = categury.split("-").join(" ");
   document.querySelector(
     ".wp-content .home .breadcrumb .breadcrumb-item:nth-child(2) a"
   ).href = `./../categury/${categury}`;
@@ -88,7 +88,7 @@ function getInfo(padgeId) {
   ).innerHTML = servName;
   document.querySelector(
     ".wp-content .home .entery-header > span a"
-  ).innerHTML = categury;
+  ).innerHTML = categury.split("-").join(" ");
   document.querySelector(
     ".wp-content .home .entery-header > span a"
   ).href = `./../categury/${categury}`;

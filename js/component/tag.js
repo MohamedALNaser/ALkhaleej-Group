@@ -80,7 +80,7 @@ function createRelated() {
     img.src = `./.${imgSrc[0]}`;
   } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
-  spanContent.innerText = categury;
+  spanContent.innerText = categury.split("-").join(" ");
   itemfigure.appendChild(spanContent);
 
   itemfigure.appendChild(img);

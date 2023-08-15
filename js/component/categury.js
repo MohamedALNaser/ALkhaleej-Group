@@ -76,7 +76,7 @@ function createRelated() {
     img.src = `./.${imgSrc[0]}`;
   } else img.src = `./.${imgSrc}`;
   let spanContent = document.createElement("span");
-  spanContent.innerText = categury;
+  spanContent.innerText = categury.split("-").join(" ");
   itemfigure.appendChild(spanContent);
   itemfigure.appendChild(img);
   serviseItem.appendChild(itemfigure);
@@ -103,8 +103,10 @@ function relatedServises(categuryName) {
 }
 let categuryName = getMeta("Pagecategory");
 
-document.title = `${categuryName} الأرشيف - مجموعة الخليج`;
-document.querySelector(".related-articl > h2").innerHTML = categuryName;
+document.title = `${categuryName.split("-").join(" ")} الأرشيف - مجموعة الخليج`;
+document.querySelector(".related-articl > h2").innerHTML = categuryName
+  .split("-")
+  .join(" ");
 function myFunction(counter) {
   try {
     // do something that might cause an error

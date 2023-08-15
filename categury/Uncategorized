@@ -4,8 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Uncategorized الأرشيف - مجموعة الخليج</title>
     <meta name="Pagecategory" content="Uncategorized">
+    <!-- <meta name="keywords" content=" "> -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="مجموعة الخليج">
+    <meta property="article:publisher" content="مجموعة الخليج">
+    <meta name="description"
+        content="مجموعة الخليج لتنظيف الفلل والمنازل - وتنظيف المفروشات بالبخار - وتنظيف وتعقيم ومكافحة الحشرات بالظهران - الدمام - الخبر - القطيف - بأسعار مميزة للجميع" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Uncategorized الأرشيف - مجموعة الخليج" />
+    <meta property="og:description"
+        content="مجموعة الخليج لتنظيف الفلل والمنازل - وتنظيف المفروشات بالبخار - وتنظيف وتعقيم ومكافحة الحشرات بالظهران - الدمام - الخبر - القطيف - بأسعار مميزة للجميع" />
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://alkhalej-group.com/Uncategorized/" />
+    <meta property="og:site_name" content="مجموعة الخليج" />
+    <meta property="og:image" content="https://alkhalej-group.com/images/مجموعة-الخليج-2.png" />
+    <meta property="og:image:secure_url" content="https://alkhalej-group.com/images/مجموعة-الخليج-2.png" />
+    <link rel="canonical" href="https://alkhalej-group.com/Uncategorized/">
+    <!-- Meta for SEO -->
     <link rel="stylesheet" href="./../css/normalize.css">
     <link rel="stylesheet" href="./../css/all.min.css">
     <link rel="stylesheet" href="./../css/component/main.css">
@@ -15,9 +34,12 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;400;500;700;800&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa:wght@200;400;500;700;800&family=Noto+Kufi+Arabic:wght@100;200;300;400;500;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- end Of Fonts -->
+    <script src="./../js/component/footerServise.js" type="module"></script>
     <script src="./../js/component/categury.js" type="module"></script>
 
 </head>
@@ -38,7 +60,8 @@
                             <span></span>
                         </div>
                         <form action="./../search" method="">
-                            <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن" autocomplete="off" value="">
+                            <input inputmode="search" type="text" name="searchName" title="بحث عن" placeholder="بحث عن"
+                                autocomplete="off" value="">
                             <button class="search-btn">
                                 <span>
                                     <i class="fa fa-search"></i>
@@ -55,7 +78,8 @@
                                         <span class="marge"></span>
                                     </ul>
                                 </li>
-                                <li class="main-menu-services"><a href="https://alkhalej-group.com/#services">خدماتنا</a></li>
+                                <li class="main-menu-services"><a
+                                        href="https://alkhalej-group.com/#services">خدماتنا</a></li>
                                 <li class="main-menu-contact"><a href="tel:0566227646">تواصل معنا</a></li>
                             </ul>
                         </div>
@@ -71,7 +95,8 @@
                     <nav class="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="https://alkhalej-group.com/"> <i class="fa fa-home" style="margin: 0 5px;"></i>الرئيسية</a>
+                                <a href="https://alkhalej-group.com/"> <i class="fa fa-home"
+                                        style="margin: 0 5px;"></i>الرئيسية</a>
                             </li>
                             <li class="breadcrumb-item category">Uncategury</li>
                         </ol>
@@ -91,7 +116,9 @@
                             <div class=" content ">
                                 <h4>إتصلوا بنا في أي وقت للحصول على أفضل الخدمات من خبراء التنظيف - 0566227646</h4>
                                 <h3>مجموعة الخليج خبراء التنظيف بالمنطقة الشرقية- 0566227646</h3>
-                                <p>لتنظيف الفل والقصور - وتنظيف المفروشات - خدمات تعقيم ومكافحة الحشرات وتنظيف المنازل بالخبر - الدمام - الظهران - القطيف - نحن متخصصون في مجال التنظيف - نمتلك طواقم مميزة ومدربة وتمتع بكفاءة غير مسبوقة - لدينا معدات وأجهزة
+                                <p>لتنظيف الفل والقصور - وتنظيف المفروشات - خدمات تعقيم ومكافحة الحشرات وتنظيف المنازل
+                                    بالخبر - الدمام - الظهران - القطيف - نحن متخصصون في مجال التنظيف - نمتلك طواقم مميزة
+                                    ومدربة وتمتع بكفاءة غير مسبوقة - لدينا معدات وأجهزة
                                     قوية متطورة - لدينا سابقة أعمال مشرفة للغاية</p>
                             </div>
                         </div>
