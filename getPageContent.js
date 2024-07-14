@@ -1,4 +1,12 @@
-import jsonData from "./services/services.json" assert { type: "json" };
+fetch("./services/services.json")
+  .then((response) => response.json())
+  .then((data) => {
+   
+    console.log(data);
+  })
+  .catch((error) => console.error("Error fetching JSON:", error));
+
+// import jsonData from "./services/services.json" assert { type: "json" };
 let services = jsonData.servise;
 
 let servData, views, link, servName, imgSrc, desc, categury, servBody;

@@ -4,8 +4,22 @@ import {
   shareButtom,
 } from "./../component/Related.js";
 import { readAlso } from "./footerServise.js";
-import jsonData from "./../../services/services.json" assert { type: "json" };
-let services = jsonData.servise;
+// import jsonData from "./../../services/services.json" assert { type: "json" };
+// let services = jsonData.servise;
+
+let services = [];
+
+try {
+  const response = await fetch("./../../services/services.json");
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  const data = await response.json();
+  services = data.servise; // Assuming your JSON structure has a 'services' key
+  console.log(services);
+} catch (error) {
+  console.error("Error fetching JSON:", error);
+}
 let idNum, servData, views, link, servName, imgSrc, desc, categury;
 let padgeId = Number(getMeta("pageId"));
 let servicesContent = document.querySelector(
