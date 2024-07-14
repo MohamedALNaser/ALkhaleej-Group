@@ -10,7 +10,7 @@ try {
   }
   const data = await response.json();
   services = data.servise; // Assuming your JSON structure has a 'services' key
-  console.log(services);
+  //console.log(services);
 } catch (error) {
   console.error("Error fetching JSON:", error);
 }
