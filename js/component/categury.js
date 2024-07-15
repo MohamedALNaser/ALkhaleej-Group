@@ -5,7 +5,7 @@ import { getMeta } from "./../component/Related.js";
 let services = [];
 
 try {
-  const response = await fetch("./../../services/services.json");
+  const response = await fetch("../services/services.json");
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
