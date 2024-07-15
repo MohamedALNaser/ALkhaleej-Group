@@ -10,7 +10,7 @@ try {
     throw new Error("Network response was not ok");
   }
   const data = await response.json();
-  services = data.servise; // Assuming your JSON structure has a 'services' key
+  services = data.servise;
   // console.log(services);
 } catch (error) {
   console.error("Error fetching JSON:", error);
