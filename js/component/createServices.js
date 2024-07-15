@@ -106,7 +106,7 @@ for (i = services.length - 1; i >= 0; i--) {
   id = services[i].id;
   servData = services[i].data;
   views = services[i].views;
-  link = services[i].href;
+  link = `${services[i].href}.html`;
   servName = services[i].name;
   imgSrc = services[i].img;
   desc = services[i].description;
